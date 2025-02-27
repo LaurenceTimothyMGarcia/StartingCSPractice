@@ -1,0 +1,162 @@
+Script started on 2021-02-11 11:18:51-08:00 [TERM="xterm" TTY="/dev/pts/17" COLUMNS="138" LINES="45"]
+laurenceg@abbott ~/cs1400/project $ pwd
+/user/laurenceg/cs1400/project
+laurenceg@abbott ~/cs1400/project $ ls -l
+total 4
+-rw------- 1 laurenceg cpp 2708 Feb 11 11:15 Calculations.java
+-rw------- 1 laurenceg cpp    0 Feb 11 11:18 pj1.txt
+laurenceg@abbott ~/cs1400/project $ cat Calculations.java
+// Laurence Timothy Manalo Garcia
+// CS1400, section 03
+// Project 1 - Calculations on Integers and Strings
+// Feb 10, 2021
+
+import java.util.Scanner;
+public class Calculations
+{
+   public static void main(String[] args)
+   {
+      Scanner kb = new Scanner(System.in);
+
+      //variables
+      int firstNumber, secondNumber;
+      int sum, difference, product, firstQuotient, remainder;
+      double secondQuotient;
+      String firstString;
+      String secondString;
+      int firstLastLetter, secondLastLetter;
+
+      //prompt asking for integers
+      System.out.print("Enter a number: ");
+      firstNumber = kb.nextInt();
+      System.out.print("Enter a second number: ");
+      secondNumber = kb.nextInt();
+      kb.nextLine();
+
+      //prompt asking for strings
+      System.out.print("Enter a string: ");
+      firstString = kb.nextLine();
+      System.out.print("Enter a second string: ");
+      secondString = kb.nextLine();
+
+      //math conducted in operations
+      sum = firstNumber + secondNumber;
+      difference = firstNumber - secondNumber;
+      product = firstNumber * secondNumber;
+      firstQuotient = firstNumber / secondNumber;
+      remainder = firstNumber % secondNumber;
+      secondQuotient = ((double)firstNumber) / ((double)secondNumber);
+
+      //results posted
+      System.out.println(firstNumber + " + "
+                         + secondNumber + " = " + sum);
+      System.out.println(firstNumber + " - "
+                         + secondNumber + " = " + difference);
+      System.out.println(firstNumber + " * "
+                         + secondNumber + " = " + product);
+      System.out.println(firstNumber + " / "
+                         + secondNumber + " = " + firstQuotient);
+      System.out.println(firstNumber + " % "
+                         + secondNumber + " = " + remainder);
+      System.out.println(firstNumber + " / "
+                         + secondNumber + " = " + secondQuotient);
+
+      //calculating location of last character
+      firstLastLetter = firstString.length() - 1;
+      secondLastLetter = secondString.length() - 1;
+
+      //results for strings
+      System.out.println("First word, uppercase: "
+                         + firstString.toUpperCase());
+      System.out.println("Second word, lowercase: "
+                         + secondString.toLowerCase());
+      System.out.println("First characters: "
+                         + firstString.charAt(0)
+                         + " and " + secondString.charAt(0));
+      System.out.println("Last characters: "
+                         + firstString.charAt(firstLastLetter)
+                         + " and " + secondString.charAt(secondLastLetter));
+
+   }
+}
+
+laurenceg@abbott ~/cs1400/project $ javac Calculations.java
+laurenceg@abbott ~/cs1400/project $ java Calculations
+Enter a number: 2
+Enter a second number: 3
+Enter a string: Hello
+Enter a second string: World
+2 + 3 = 5
+2 - 3 = -1
+2 * 3 = 6
+2 / 3 = 0
+2 % 3 = 2
+2 / 3 = 0.6666666666666666
+First word, uppercase: HELLO
+Second word, lowercase: world
+First characters: H and W
+Last characters: o and d
+laurenceg@abbott ~/cs1400/project $ java Calculations
+Enter a number: 10
+Enter a second number: 5
+Enter a string: HI
+Enter a second string: HELLO
+10 + 5 = 15
+10 - 5 = 5
+10 * 5 = 50
+10 / 5 = 2
+10 % 5 = 0
+10 / 5 = 2.0
+First word, uppercase: HI
+Second word, lowercase: hello
+First characters: H and H
+Last characters: I and O
+laurenceg@abbott ~/cs1400/project $ java Calculations
+Enter a number: 6
+Enter a second number: 6
+Enter a string: turtle
+Enter a second string: turtle
+6 + 6 = 12
+6 - 6 = 0
+6 * 6 = 36
+6 / 6 = 1
+6 % 6 = 0
+6 / 6 = 1.0
+First word, uppercase: TURTLE
+Second word, lowercase: turtle
+First characters: t and t
+Last characters: e and e
+laurenceg@abbott ~/cs1400/project $ java Calculations
+Enter a number: 0
+Enter a second number: 3
+Enter a string: a
+Enter a second string: z
+0 + 3 = 3
+0 - 3 = -3
+0 * 3 = 0
+0 / 3 = 0
+0 % 3 = 0
+0 / 3 = 0.0
+First word, uppercase: A
+Second word, lowercase: z
+First characters: a and z
+Last characters: a and z
+laurenceg@abbott ~/cs1400/project $ java Calculations
+Enter a number: -12
+Enter a second number: 5
+Enter a string: garciA
+Enter a second string: laurencE
+-12 + 5 = -7
+-12 - 5 = -17
+-12 * 5 = -60
+-12 / 5 = -2
+-12 % 5 = -2
+-12 / 5 = -2.4
+First word, uppercase: GARCIA
+Second word, lowercase: laurence
+First characters: g and l
+Last characters: A and E
+laurenceg@abbott ~/cs1400/project $ exit
+exit
+
+Script done on 2021-02-11 11:20:53-08:00 [COMMAND_EXIT_CODE="0"]

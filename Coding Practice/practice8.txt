@@ -1,0 +1,438 @@
+Script started on 2021-04-08 19:48:25-07:00 [TERM="xterm" TTY="/dev/pts/155" COLUMNS="148" LINES="47"]
+laurenceg@costello ~/cs1400/codingPractice $ pwd
+/user/laurenceg/cs1400/codingPractice
+laurenceg@costello ~/cs1400/codingPractice $ ls -l
+total 315
+-rw------- 1 laurenceg cpp  1004 Apr  8 18:31 BinarySearch.java
+-rw------- 1 laurenceg cpp  1354 Apr  8 19:46 BoyNames.txt
+-rw------- 1 laurenceg cpp   927 Mar 11 14:54 Car.class
+-rw------- 1 laurenceg cpp   750 Mar  9 22:07 Car.java
+-rw------- 1 laurenceg cpp  1173 Mar 11 14:54 CarTest.class
+-rw------- 1 laurenceg cpp   622 Mar  9 22:02 CarTest.java
+-rw------- 1 laurenceg cpp   989 Mar 18 11:13 CarpetCalculator.class
+-rw------- 1 laurenceg cpp   740 Mar 16 21:25 CarpetCalculator.java
+-rw------- 1 laurenceg cpp  1124 Feb 25 14:42 Exam.class
+-rw------- 1 laurenceg cpp   796 Feb 24 12:26 Exam.java
+-rw------- 1 laurenceg cpp   777 Feb 18 12:23 FormattedOutput.class
+-rw------- 1 laurenceg cpp   548 Feb 17 10:50 FormattedOutput.java
+-rw------- 1 laurenceg cpp  3399 Mar  4 13:33 Geometry.class
+-rw-r--r-- 1 laurenceg cpp  5445 Mar  3 13:44 Geometry.java
+-rw------- 1 laurenceg cpp  1445 Apr  8 19:46 GirlNames.txt
+-rw------- 1 laurenceg cpp   859 Feb 25 14:44 HollowSquare.class
+-rw------- 1 laurenceg cpp   929 Feb 24 13:27 HollowSquare.java
+-rw------- 1 laurenceg cpp   835 Mar 18 11:05 HotDogStand.class
+-rw------- 1 laurenceg cpp   535 Mar 18 11:05 HotDogStand.java
+-rw------- 1 laurenceg cpp  1391 Mar 18 11:12 HotDogStandTest.class
+-rw------- 1 laurenceg cpp  1342 Mar 18 11:04 HotDogStandTest.java
+-rw------- 1 laurenceg cpp  1216 Feb  9 17:23 KeyboardInput.class
+-rw------- 1 laurenceg cpp   875 Feb  9 15:18 KeyboardInput.java
+-rw------- 1 laurenceg cpp  2074 Apr  8 19:42 Lottery.class
+-rw------- 1 laurenceg cpp  2033 Apr  8 18:30 Lottery.java
+-rw------- 1 laurenceg cpp  1112 Feb  9 17:24 NameAndInitials.class
+-rw------- 1 laurenceg cpp   737 Feb  9 15:46 NameAndInitials.java
+-rw------- 1 laurenceg cpp  2051 Apr  8 19:45 NameSearch.class
+-rw------- 1 laurenceg cpp  1951 Apr  8 18:30 NameSearch.java
+-rw------- 1 laurenceg cpp   640 Feb 25 14:43 Pattern.class
+-rw------- 1 laurenceg cpp   288 Feb 24 12:44 Pattern.java
+-rw------- 1 laurenceg cpp  1003 Feb  1 21:45 Pay.class
+-rw-r--r-- 1 laurenceg cpp   980 Feb  1 21:32 Pay.java
+-rw------- 1 laurenceg cpp   902 Mar  4 13:34 PrimeChecker.class
+-rw------- 1 laurenceg cpp   772 Mar  3 14:29 PrimeChecker.java
+-rw------- 1 laurenceg cpp   762 Mar 16 21:26 RoomCarpet.class
+-rw------- 1 laurenceg cpp   463 Mar 16 21:26 RoomCarpet.java
+-rw------- 1 laurenceg cpp   738 Mar 16 20:58 RoomDimension.class
+-rw------- 1 laurenceg cpp   490 Mar 16 20:58 RoomDimension.java
+-rw------- 1 laurenceg cpp   655 Mar 11 14:55 SavingsAccount.class
+-rw------- 1 laurenceg cpp   716 Mar 10 12:44 SavingsAccount.java
+-rw------- 1 laurenceg cpp  1828 Mar 11 14:55 SavingsAccountTest.class
+-rw------- 1 laurenceg cpp  1566 Mar 10 13:39 SavingsAccountTest.java
+-rw------- 1 laurenceg cpp  1635 Apr  8 19:15 SelectionSort.java
+-rw------- 1 laurenceg cpp  1419 Feb 25 14:45 SeparateEvenOddNumbers.class
+-rw------- 1 laurenceg cpp  1109 Feb 25 14:39 SeparateEvenOddNumbers.java
+-rw------- 1 laurenceg cpp  1098 Feb 18 12:23 StringComparison.class
+-rw------- 1 laurenceg cpp  1416 Feb 17 11:13 StringComparison.java
+-rw------- 1 laurenceg cpp  1269 Mar  4 13:35 StringComparisonWithWildCard.class
+-rw------- 1 laurenceg cpp  1318 Mar  4 13:30 StringComparisonWithWildCard.java
+-rw------- 1 laurenceg cpp  1202 Feb  9 17:24 VendingMachine.class
+-rw------- 1 laurenceg cpp   919 Feb  9 17:18 VendingMachine.java
+-rw------- 1 laurenceg cpp     8 Feb 25 14:45 data.even
+-rw------- 1 laurenceg cpp     5 Feb 25 14:45 data.odd
+-rw------- 1 laurenceg cpp    75 Apr  8 19:47 data.txt
+-rw-r--r-- 1 laurenceg cpp 46774 Mar 10 12:40 hs_err_pid123548.log
+-rw-r--r-- 1 laurenceg cpp 46663 Mar 11 14:54 hs_err_pid13225.log
+-rw-r--r-- 1 laurenceg cpp 45531 Mar 10 13:32 hs_err_pid5719.log
+-rw------- 1 laurenceg cpp  2635 Feb  1 21:46 practice1.txt
+-rw------- 1 laurenceg cpp  6955 Feb  9 17:25 practice2.txt
+-rw------- 1 laurenceg cpp  7361 Feb 18 12:25 practice3.txt
+-rw------- 1 laurenceg cpp  9080 Feb 25 14:46 practice4.txt
+-rw------- 1 laurenceg cpp 16851 Mar  4 13:36 practice5.txt
+-rw------- 1 laurenceg cpp 10972 Mar 11 14:56 practice6.txt
+-rw------- 1 laurenceg cpp 10624 Mar 18 11:14 practice7.txt
+-rw------- 1 laurenceg cpp     0 Apr  8 19:48 practice8.txt
+-rw-r--r-- 1 laurenceg cpp     0 Mar 10 12:40 replay_pid123548.log
+-rw-r--r-- 1 laurenceg cpp     0 Mar 11 14:54 replay_pid13225.log
+-rw-r--r-- 1 laurenceg cpp     0 Mar 10 13:32 replay_pid5719.log
+-rw------- 1 laurenceg cpp  1284 Feb 18 12:24 roots.class
+-rw------- 1 laurenceg cpp  1095 Feb 18 12:17 roots.java
+laurenceg@costello ~/cs1400/codingPractice $ cat Lottery.java
+import java.util.Scanner;
+import java.util.Random;
+public class Lottery
+{
+   public static void main(String[] args)
+   {
+      int[] userLottery;
+      int[] lotteryNumber = generateLotteryNumber();
+      int choice;
+      Scanner kb = new Scanner(System.in);
+
+      System.out.println("welcome to play Lottery ...");
+      System.out.println("1. enter your own lottery number");
+      System.out.println("2. get a computer-generated lottery number");
+      System.out.print("your choice: ");
+      choice = kb.nextInt();
+
+      if (choice == 2)
+      {
+         System.out.println();
+         System.out.println("The Lottery Number is: ");
+         userLottery = generateLotteryNumber();
+      }
+      else
+      {
+         userLottery = new int[5];
+         System.out.println();
+         System.out.print("enter 5 single-digit numbers, separated by space: ");
+
+         for (int i = 0; i < userLottery.length; i++)
+         {
+            userLottery[i] = kb.nextInt();
+         }
+      }
+
+      System.out.println("The Lottery Number is: ");
+      System.out.print("\t");
+      for (int val: lotteryNumber)
+      {
+         System.out.print(val + " ");
+      }
+      System.out.println();
+
+      System.out.println("Your Number is: ");
+      System.out.print("\t");
+      for (int val: userLottery)
+      {
+         System.out.print(val + " ");
+      }
+      System.out.println();
+      System.out.printf("There are %d matching digits",
+                        compareNumbers(lotteryNumber, userLottery));
+   }
+
+   public static int[] generateLotteryNumber()
+   {
+      Random rand = new Random();
+      int[] lotteryNumber = new int [5];
+
+      for (int i = 0; i < 5; i++)
+      {
+         lotteryNumber[i] = rand.nextInt(10);
+      }
+      return lotteryNumber;
+   }
+
+   public static int compareNumbers (int[] lottery, int[] picks)
+   {
+      int count = 0;
+      for (int i = 0; i < lottery.length; i++)
+      {
+         if(lottery[i] == picks[i])
+         {
+            count++;
+         }
+      }
+      return count;
+   }
+}
+laurenceg@costello ~/cs1400/codingPractice $ javac Lottery.java
+laurenceg@costello ~/cs1400/codingPractice $ java Lottery
+welcome to play Lottery ...
+1. enter your own lottery number
+2. get a computer-generated lottery number
+your choice: 2
+
+The Lottery Number is:
+The Lottery Number is:
+        3 9 7 3 7
+Your Number is:
+        6 0 6 5 1
+There are 0 matching digitslaurenceg@costello ~/cs1400/codingPractice $ java Lottery
+welcome to play Lottery ...
+1. enter your own lottery number
+2. get a computer-generated lottery number
+your choice: 1
+
+enter 5 single-digit numbers, separated by space: 3 4 5 6 7
+The Lottery Number is:
+        3 5 5 9 2
+Your Number is:
+        3 4 5 6 7
+There are 2 matching digitslaurenceg@costello ~/cs1400/codingPractice $
+laurenceg@costello ~/cs1400/codingPractice $ cat NameSearch.java
+import java.util.Scanner;
+import java.io.*;
+public class NameSearch
+{
+   public static void main(String[] args) throws IOException
+   {
+      String[] boyNames = new String[200];
+      String[] girlNames = new String[200];
+      String name;
+      Scanner kb = new Scanner(System.in);
+
+      getNamesFromFile(boyNames, "BoyNames.txt");
+      getNamesFromFile(girlNames, "GirlNames.txt");
+      System.out.println("Popular Name Search");
+
+      do
+      {
+         System.out.print("Enter a name (blank line to stop): ");
+         name = kb.nextLine();
+         if (name.compareTo("") == 0)
+         {
+            System.exit(0);
+         }
+         displaySearchResult(name, boyNames, girlNames);
+      } while (!name.equals(""));
+   }
+
+   public static void getNamesFromFile(String[] array, String filename) throws IOException
+   {
+      File file = new File(filename);
+      Scanner addName = new Scanner(file);
+      int count = 0;
+
+      while (addName.hasNext() && count < array.length)
+      {
+         array[count] = addName.nextLine();
+         count++;
+      }
+   }
+
+   public static int sequentialSearch(String[] array, String value)
+   {
+      for(int i = 0; i < array.length; i++)
+      {
+         if (array[i].compareTo(value) == 0)
+         {
+            return i;
+         }
+      }
+      return -1;
+   }
+
+   public static void displaySearchResult(String input, String[] array1, String[] array2)
+   {
+      int searchResult;
+      searchResult = sequentialSearch(array1, input);
+      if (searchResult >= 0)
+      {
+         System.out.println(input + " is a popular boy's name.\n");
+      }
+
+      if (searchResult == -1)
+      {
+         searchResult = sequentialSearch(array2, input);
+         if (searchResult >= 0)
+         {
+            System.out.println(input + " is a popular girl's name.\n");
+         }
+         else
+         {
+            System.out.println(input + " is not a popular name.\n");
+         }
+      }
+   }
+}
+
+laurenceg@costello ~/cs1400/codingPractice $ javac NameSearch.java
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 233296 bytes for Chunk::new
+# An error report file with more information is saved as:
+# /user/laurenceg/cs1400/codingPractice/hs_err_pid23979.log
+[thread 139943944562240 also had an error]
+#
+# Can't open file to dump replay data. Error: Cannot allocate memory
+laurenceg@costello ~/cs1400/codingPractice $ javac NameSearch.java
+laurenceg@costello ~/cs1400/codingPractice $ java NameSearch
+Popular Name Search
+Enter a name (blank line to stop): Daisy
+Daisy is a popular girl's name.
+
+Enter a name (blank line to stop): Richard
+Richard is a popular boy's name.
+
+Enter a name (blank line to stop): Kristine
+Kristine is not a popular name.
+
+Enter a name (blank line to stop): Laurence
+Laurence is not a popular name.
+
+Enter a name (blank line to stop): Larry
+Larry is not a popular name.
+
+Enter a name (blank line to stop):
+laurenceg@costello ~/cs1400/codingPractice $ cat SelectionSort.java
+import java.io.*;
+import java.util.Scanner;
+public class SelectionSort
+{
+   public static void main(String[] args) throws IOException
+   {
+      File dataFile = new File("data.txt");
+      int[] dataArray = new int[100];
+      int counter = 0;
+
+      if (!dataFile.exists())
+      {
+         System.out.println("data.txt is not found");
+         System.exit(0);
+      }
+
+      Scanner readFile = new Scanner(dataFile);
+
+      while (counter < dataArray.length)
+      {
+         if (readFile.hasNext())
+         {
+            dataArray[counter] = readFile.nextInt();
+            counter++;
+         }
+         else
+         {
+            break;
+         }
+      }
+
+      selectionSort(dataArray, counter);
+      outputData(dataArray, counter);
+   }
+
+   public static void selectionSort(int[] array, int counter)
+   {
+      int minIndex, tempHold;
+      for (int i = 0; i < (counter - 1); i++)
+      {
+         minIndex = i;
+         for (int j = i+1; j < counter; j++)
+         {
+            if (array[j] < array[minIndex])
+            {
+               minIndex = j;
+            }
+         }
+         tempHold = array[minIndex];
+         array[minIndex] = array[i];
+         array[i] = tempHold;
+      }
+   }
+
+   public static void outputData(int[] array, int counter) throws
+IOException
+   {
+      PrintWriter outFile = new PrintWriter("data.out");
+      int eachLine = 0;
+
+      for (int i = 0; i < counter; i++)
+      {
+         if (eachLine == 10)
+         {
+            outFile.println();
+            eachLine = 0;
+         }
+         outFile.printf("%-8d", array[i]);
+         eachLine++;
+      }
+      outFile.close();
+   }
+}
+
+laurenceg@costello ~/cs1400/codingPractice $ javac SelectionSort.java
+laurenceg@costello ~/cs1400/codingPractice $ java SelectionSort
+laurenceg@costello ~/cs1400/codingPractice $ cat data.out
+-200    -11     -9      -5      -1      0       2       4       8       22
+28      29      34      45      61      62      63      64      65      88
+99      100     200     1000    laurenceg@costello ~/cs1400/codingPractice $
+laurenceg@costello ~/cs1400/codingPractice $ cat BinarySearch.java
+import java.util.Scanner;
+public class BinarySearch
+{
+   public static void main(String[] args)
+   {
+      Scanner kb = new Scanner(System.in);
+      int input, position;
+      int[] array = {15, 20, 25, 30, 35, 40};
+
+      System.out.print("enter a number: ");
+      input = kb.nextInt();
+
+      position = BinSearch(array, input);
+      if (position == -1)
+      {
+         System.out.println(input + " is not in the array");
+      }
+      else
+      {
+         System.out.println(input + " is at position " + position);
+      }
+   }
+
+   public static int BinSearch(int[] array, int input)
+   {
+      int first = 0;
+      int last = array.length - 1;
+      int mid;
+
+      while (first <= last)
+      {
+         mid = (first + last) / 2;
+
+         if (input == array[mid])
+         {
+            return mid;
+         }
+         if (input < array[mid])
+         {
+            last = mid - 1;
+         }
+         else
+         {
+            first = mid + 1;
+         }
+      }
+
+      return -1;
+   }
+}
+
+laurenceg@costello ~/cs1400/codingPractice $ javac BinarySearch.java
+laurenceg@costello ~/cs1400/codingPractice $ java BinarySearch
+enter a number: 10
+10 is not in the array
+laurenceg@costello ~/cs1400/codingPractice $ java BinarySearch
+enter a number: 0
+0 is not in the array
+laurenceg@costello ~/cs1400/codingPractice $ java BinarySearch
+enter a number: 15
+15 is at position 0
+laurenceg@costello ~/cs1400/codingPractice $ java BinarySearch
+enter a number: 20
+20 is at position 1
+laurenceg@costello ~/cs1400/codingPractice $ java BinarySearch
+enter a number: 40
+40 is at position 5
+laurenceg@costello ~/cs1400/codingPractice $ exit
+exit
+
+Script done on 2021-04-08 19:51:24-07:00 [COMMAND_EXIT_CODE="0"]

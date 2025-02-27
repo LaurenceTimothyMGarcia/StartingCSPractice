@@ -1,0 +1,208 @@
+Script started on 2021-02-21 17:17:59-08:00 [TERM="xterm" TTY="/dev/pts/4" COLUMNS="163" LINES="61"]
+laurenceg@costello ~/cs1400/project $ pwd
+/user/laurenceg/cs1400/project
+laurenceg@costello ~/cs1400/project $ ls -l
+total 16
+-rw------- 1 laurenceg cpp 1874 Feb 11 11:19 Calculations.class
+-rw------- 1 laurenceg cpp 2708 Feb 11 11:15 Calculations.java
+-rw------- 1 laurenceg cpp 2040 Feb 21 17:06 Tax.java
+-rw------- 1 laurenceg cpp 5710 Feb 11 11:20 pj1.txt
+-rw------- 1 laurenceg cpp    0 Feb 21 17:17 pj2.txt
+laurenceg@costello ~/cs1400/project $ cat Tax.java
+//Laurence Timothy Manalo Garcia
+//CS 1400, section 03
+//Project 2 - Income Tax Program
+//Feb 19th 2021
+
+import java.util.Scanner;
+
+public class Tax
+{
+   public static void main(String[] args)
+   {
+      Scanner kb = new Scanner(System.in);
+
+      //variables
+      String maritalStatus;
+      double income;
+      double incomeTax = 0;
+
+      //constants
+      final double TAX_GROUP1 = 0.1;
+      final double TAX_GROUP2 = 0.15;
+      final double TAX_GROUP3 = 0.25;
+
+      //asking martial status
+      System.out.print("Enter your marital status (single or married): ");
+      maritalStatus = kb.nextLine();
+      maritalStatus = maritalStatus.toLowerCase();
+      if (!maritalStatus.equals("single") && !maritalStatus.equals("married"))
+      {
+         System.out.println("-- illegal marital status --");
+         System.exit(0);
+      }
+
+      //asking income
+      System.out.print("Enter your taxable income: ");
+      income = kb.nextDouble();
+      if (income < 0)
+      {
+         System.out.println("-- illegal income --");
+         System.exit(0);
+      }
+
+      //calculates tax based on marital status and income
+      if (maritalStatus.equals("single"))
+      {
+         if ((income >= 0) && (income <= 8000))
+         {
+            incomeTax = income * TAX_GROUP1;
+         }
+         else if ((income > 8000) && (income <= 32000))
+         {
+            incomeTax = 800 + (TAX_GROUP2 * (income - 8000));
+         }
+         else
+         {
+            incomeTax = 4400 + (TAX_GROUP3 * (income - 32000));
+         }
+      }
+      else
+      {
+         if ((income >= 0) && (income <= 16000))
+         {
+            incomeTax = income * TAX_GROUP1;
+         }
+         else if ((income > 16000) && (income <= 64000))
+         {
+            incomeTax = 1600 + (TAX_GROUP2 * (income - 16000));
+         }
+         else
+         {
+            incomeTax = 8800 + (TAX_GROUP3 * (income - 64000));
+         }
+      }
+
+      //prints out income tax
+      System.out.printf("Your income tax is $%,.2f.\n", incomeTax);
+   }
+}
+laurenceg@costello ~/cs1400/project $ javac Tax.java
+laurenceg@costello ~/cs1400/project $ java Tax
+Enter your marital status (single or married): single
+Enter your taxable income: 1000
+Your income tax is $100.00.
+laurenceg@costello ~/cs1400/project $ java Tax
+Enter your marital status (single or married): SINGLE
+Enter your taxable income: 10000
+Your income tax is $1,100.00.
+laurenceg@costello ~/cs1400/project $ java Tax
+Enter your marital status (single or married): sinGLE
+Enter your taxable income: 40000
+Your income tax is $6,400.00.
+laurenceg@costello ~/cs1400/project $ java Tax
+Enter your marital status (single or married): married
+Enter your taxable income: 1000
+Your income tax is $100.00.
+laurenceg@costello ~/cs1400/project $ java Tax
+Enter your marital status (single or married): MARRIED
+Enter your taxable income: 20000
+Your income tax is $2,200.00.
+laurenceg@costello ~/cs1400/project $ java Tax
+Enter your marital status (single or married): MARRied
+Enter your taxable income: 80000
+Your income tax is $12,800.00.
+laurenceg@costello ~/cs1400/project $ java Tax
+Enter your marital status (single or married): single
+Enter your taxable income: 0
+Your income tax is $0.00.
+laurenceg@costello ~/cs1400/project $ java Tax
+Enter your marital status (single or married): single
+Enter your taxable income: 1
+Your income tax is $0.10.
+laurenceg@costello ~/cs1400/project $ java Tax
+Enter your marital status (single or married): single
+Enter your taxable income: 7999
+Your income tax is $799.90.
+laurenceg@costello ~/cs1400/project $ java Tax
+Enter your marital status (single or married): single
+Enter your taxable income: 8000
+Your income tax is $800.00.
+laurenceg@costello ~/cs1400/project $ java Tax
+Enter your marital status (single or married): single
+Enter your taxable income: 8001
+Your income tax is $800.15.
+laurenceg@costello ~/cs1400/project $ java Tax
+Enter your marital status (single or married): single
+Enter your taxable income: 31999
+Your income tax is $4,399.85.
+laurenceg@costello ~/cs1400/project $ java Tax
+Enter your marital status (single or married): single
+Enter your taxable income: 32000
+Your income tax is $4,400.00.
+laurenceg@costello ~/cs1400/project $ java Tax
+Enter your marital status (single or married): single
+Enter your taxable income: 32001
+Your income tax is $4,400.25.
+laurenceg@costello ~/cs1400/project $ java Tax
+Enter your marital status (single or married): married
+Enter your taxable income: 0
+Your income tax is $0.00.
+laurenceg@costello ~/cs1400/project $ java Tax
+Enter your marital status (single or married): married
+Enter your taxable income: 1
+Your income tax is $0.10.
+laurenceg@costello ~/cs1400/project $ java Tax
+Enter your marital status (single or married): married
+Enter your taxable income: 15999
+Your income tax is $1,599.90.
+laurenceg@costello ~/cs1400/project $ java Tax
+Enter your marital status (single or married): married
+Enter your taxable income: 16000
+Your income tax is $1,600.00.
+laurenceg@costello ~/cs1400/project $ java Tax
+Enter your marital status (single or married): married
+Enter your taxable income: 16001
+Your income tax is $1,600.15.
+laurenceg@costello ~/cs1400/project $ java Tax
+Enter your marital status (single or married): married
+Enter your taxable income: 63999
+Your income tax is $8,799.85.
+laurenceg@costello ~/cs1400/project $ java Tax
+Enter your marital status (single or married): married
+Enter your taxable income: 64000
+Your income tax is $8,800.00.
+laurenceg@costello ~/cs1400/project $ java Tax
+Enter your marital status (single or married): married
+Enter your taxable income: 64001
+Your income tax is $8,800.25.
+laurenceg@costello ~/cs1400/project $ java Tax
+Enter your marital status (single or married): unknown
+-- illegal marital status --
+laurenceg@costello ~/cs1400/project $ java Tax
+Enter your marital status (single or married): s
+-- illegal marital status --
+laurenceg@costello ~/cs1400/project $ java Tax
+Enter your marital status (single or married): sing
+-- illegal marital status --
+laurenceg@costello ~/cs1400/project $ java Tax
+Enter your marital status (single or married): singled
+-- illegal marital status --
+laurenceg@costello ~/cs1400/project $ java Tax
+Enter your marital status (single or married): m
+-- illegal marital status --
+laurenceg@costello ~/cs1400/project $ java Tax
+Enter your marital status (single or married): marrie
+-- illegal marital status --
+laurenceg@costello ~/cs1400/project $ java Tax
+Enter your marital status (single or married): single
+Enter your taxable income: -1
+-- illegal income --
+laurenceg@costello ~/cs1400/project $ java Tax
+Enter your marital status (single or married): single
+Enter your taxable income: -100
+-- illegal income --
+laurenceg@costello ~/cs1400/project $ exit
+exit
+
+Script done on 2021-02-21 17:22:28-08:00 [COMMAND_EXIT_CODE="0"]

@@ -1,0 +1,374 @@
+Script started on 2021-04-05 15:57:02-07:00 [TERM="xterm" TTY="/dev/pts/16" COLUMNS="129" LINES="42"]
+laurenceg@costello ~/cs1400/project $ pwd
+/user/laurenceg/cs1400/project
+laurenceg@costello ~/cs1400/project $ ls -l
+total 424
+-rw------- 1 laurenceg cpp   1874 Feb 11 11:19 Calculations.class
+-rw------- 1 laurenceg cpp   2708 Feb 11 11:15 Calculations.java
+-rw------- 1 laurenceg cpp   2307 Apr  5 15:55 Fraction.class
+-rw------- 1 laurenceg cpp   3504 Apr  5 15:52 Fraction.java
+-rw------- 1 laurenceg cpp   1854 Apr  5 15:55 FractionDemo.class
+-rw------- 1 laurenceg cpp   2065 Apr  5 15:52 FractionDemo.java
+-rw------- 1 laurenceg cpp   1485 Feb 28 10:05 PalindromeTester.class
+-rw------- 1 laurenceg cpp   1668 Feb 25 21:22 PalindromeTester.java
+-rw------- 1 laurenceg cpp   1606 Feb 21 17:18 Tax.class
+-rw------- 1 laurenceg cpp   2040 Feb 21 17:06 Tax.java
+-rw------- 1 laurenceg cpp   1571 Mar 13 16:28 Temperature.class
+-rw------- 1 laurenceg cpp   1951 Mar 13 16:23 Temperature.java
+-rw------- 1 laurenceg cpp   2231 Mar 13 16:28 TemperatureDemo.class
+-rw------- 1 laurenceg cpp   2157 Mar 13 16:23 TemperatureDemo.java
+-rw-r--r-- 1 laurenceg cpp  46634 Apr  4 10:52 hs_err_pid104667.log
+-rw-r--r-- 1 laurenceg cpp  47428 Apr  5 15:55 hs_err_pid39461.log
+-rw------- 1 laurenceg cpp   5710 Feb 11 11:20 pj1.txt
+-rw------- 1 laurenceg cpp   9828 Feb 21 17:22 pj2.txt
+-rw------- 1 laurenceg cpp   6226 Feb 28 10:08 pj3.txt
+-rw------- 1 laurenceg cpp   6749 Mar 13 16:29 pj4.txt
+-rw------- 1 laurenceg cpp      0 Apr  5 15:57 pj5.txt
+-rw-r--r-- 1 laurenceg cpp      0 Apr  4 10:52 replay_pid104667.log
+-rw-r--r-- 1 laurenceg cpp 212396 Apr  5 15:55 replay_pid39461.log
+laurenceg@costello ~/cs1400/project $ cat Fraction.java
+//Laurence Timothy Manalo Garcia
+//CS 1400, section 03
+//Project 5 - Arithmetic Operations with Fractions
+//April 3rd, 2021
+
+import java.util.Scanner;
+public class Fraction
+{
+   private int numerator;
+   private int denominator;
+   private static int created = 0;
+
+   public Fraction()
+   {
+      numerator = 0;
+      denominator = 1;
+   }
+   public Fraction(int num, int den)
+   {
+      numerator = num;
+      denominator = den;
+      this.fractionCheck(numerator, denominator);
+      created++;
+   }
+
+   private void fractionCheck (int num, int den)
+   {
+      int commonD;
+      if (den == 0)
+      {
+         System.out.println("denominator cannot be 0");
+         System.out.println("the fraction is set to 0/1");
+         num = 0;
+         den = 1;
+      }
+      if (num == 0)
+      {
+         den = 1;
+      }
+      if (den < 0)
+      {
+         num = (-1) * num;
+         den = (-1) * den;
+      }
+
+      if(num > 0)
+      {
+         commonD = gcd(num,den);
+         numerator = num / commonD;
+         denominator = den / commonD;
+      }
+      else if (num == 0)
+      {
+         numerator = 0;
+         denominator = 1;
+      }
+      else
+      {
+         num = (-1) * num;
+         commonD = gcd(num,den);
+         num = (-1) * num;
+         numerator = num / commonD;
+         denominator = den / commonD;
+      }
+
+   }
+
+   private int gcd (int num1, int num2)
+   {
+      while (num1 != num2)
+      {
+         if (num1 > num2)
+         {
+            num1 = num1 - num2;
+         }
+         else
+         {
+            num2 = num2 - num1;
+         }
+      }
+      return num1;
+   }
+
+   public Fraction add(Fraction f2)
+   {
+      int num1, num2, den;
+      int result;
+
+      num1 = this.numerator * f2.denominator;
+      num2 = f2.numerator * this.denominator;
+      den = this.denominator * f2.denominator;
+
+      result = num1 + num2;
+      Fraction frac = new Fraction(result, den);
+      return frac;
+   }
+
+   public Fraction subtract(Fraction f2)
+   {
+      int num1, num2, den;
+      int result;
+
+      num1 = this.numerator * f2.denominator;
+      num2 = f2.numerator * this.denominator;
+      den = this.denominator * f2.denominator;
+
+      result = num1 - num2;
+
+      Fraction frac = new Fraction(result, den);
+      return frac;
+   }
+
+   public Fraction multiply(Fraction f2)
+   {
+      int totalNum, totalDen;
+
+      totalNum = this.numerator * f2.numerator;
+      totalDen = this.denominator * f2.denominator;
+      Fraction frac = new Fraction(totalNum, totalDen);
+      return frac;
+   }
+
+   public Fraction divide(Fraction f2)
+   {
+      int totalNum, totalDen;
+
+      totalNum = this.numerator * f2.denominator;
+      totalDen = this.denominator * f2.numerator;
+      Fraction frac = new Fraction(totalNum, totalDen);
+      return frac;
+   }
+
+   public String toString()
+   {
+      String str = this.numerator + "/" + this.denominator;
+      return str;
+   }
+
+   public float printAsFloat()
+   {
+      float result;
+      result = (float) this.numerator / (float) this.denominator;
+      System.out.print(result);
+      return result;
+   }
+
+   public static int numberOfFractions()
+   {
+      return created;
+   }
+
+   public static Fraction read()
+   {
+      Scanner kb = new Scanner(System.in);
+      int num, den;
+
+      System.out.print("enter an integer numerator: ");
+      num = kb.nextInt();
+      System.out.print("enter an integer denominator: ");
+      den = kb.nextInt();
+
+      Fraction frac = new Fraction(num, den);
+      return frac;
+   }
+}
+laurenceg@costello ~/cs1400/project $ cat FractionDemo.java
+//Laurence Timothy Manalo Garcia
+//CS1400, section 03
+//Project 5 - Arithmetic Operations with Fractions
+//April 3rd, 2021
+
+import java.util.Scanner;
+public class FractionDemo
+{
+   public static void main(String[] args)
+   {
+      boolean askToContinue;
+      do
+      {
+         Scanner kb = new Scanner(System.in);
+         Fraction frac1 = new Fraction();
+         Fraction frac2 = new Fraction();
+
+         System.out.println("Please enter 2 fractions --");
+         System.out.println("Fraction 1:");
+         frac1 = Fraction.read();
+         System.out.println("Fraction 2:");
+         frac2 = Fraction.read();
+
+         Fraction resultAdd = new Fraction();
+         resultAdd = frac1.add(frac2);
+         System.out.printf("%s + %s = %s = ", frac1, frac2, resultAdd);
+         resultAdd.printAsFloat();
+         System.out.println();
+
+         Fraction resultSubtract = new Fraction();
+         resultSubtract = frac1.subtract(frac2);
+         System.out.printf("%s - %s = %s = ", frac1, frac2, resultSubtract);
+         resultSubtract.printAsFloat();
+         System.out.println();
+
+         Fraction resultMultiply = new Fraction();
+         resultMultiply = frac1.multiply(frac2);
+         System.out.printf("%s * %s = %s = ", frac1, frac2, resultMultiply);
+         resultMultiply.printAsFloat();
+         System.out.println();
+
+         Fraction resultDivide = new Fraction();
+         resultDivide = frac1.divide(frac2);
+         System.out.printf("%s / %s = %s = ", frac1, frac2, resultDivide);
+         resultDivide.printAsFloat();
+         System.out.println();
+
+         System.out.print("Do you want to continue? ('Y' or 'y' for yes, 'N' or 'n' for no) ");
+         String bool = kb.nextLine();
+         char boolCheck = bool.charAt(0);
+         if (boolCheck == 'Y' || boolCheck == 'y')
+         {
+            askToContinue = true;
+         }
+         else
+         {
+            askToContinue = false;
+         }
+      }while(askToContinue);
+
+      System.out.printf("%d fractions have been created.\n", Fraction.numberOfFractions());
+   }
+}
+
+laurenceg@costello ~/cs1400/project $ javac FractionDemo.java
+laurenceg@costello ~/cs1400/project $ java FractionDemo
+Please enter 2 fractions --
+Fraction 1:
+enter an integer numerator: 1
+enter an integer denominator: 2
+Fraction 2:
+enter an integer numerator: 1
+enter an integer denominator: 3
+1/2 + 1/3 = 5/6 = 0.8333333
+1/2 - 1/3 = 1/6 = 0.16666667
+1/2 * 1/3 = 1/6 = 0.16666667
+1/2 / 1/3 = 3/2 = 1.5
+Do you want to continue? ('Y' or 'y' for yes, 'N' or 'n' for no) n
+6 fractions have been created.
+laurenceg@costello ~/cs1400/project $ java FractionDemo
+Please enter 2 fractions --
+Fraction 1:
+enter an integer numerator: 3
+enter an integer denominator: 0
+denominator cannot be 0
+the fraction is set to 0/1
+Fraction 2:
+enter an integer numerator: 6
+enter an integer denominator: -2
+0/1 + -3/1 = -3/1 = -3.0
+0/1 - -3/1 = 3/1 = 3.0
+0/1 * -3/1 = 0/1 = 0.0
+0/1 / -3/1 = 0/1 = 0.0
+Do you want to continue? ('Y' or 'y' for yes, 'N' or 'n' for no) y
+Please enter 2 fractions --
+Fraction 1:
+enter an integer numerator: 0
+enter an integer denominator: -5
+Fraction 2:
+enter an integer numerator: -5
+enter an integer denominator: -20
+0/1 + 1/4 = 1/4 = 0.25
+0/1 - 1/4 = -1/4 = -0.25
+0/1 * 1/4 = 0/1 = 0.0
+0/1 / 1/4 = 0/1 = 0.0
+Do you want to continue? ('Y' or 'y' for yes, 'N' or 'n' for no) n
+12 fractions have been created.
+laurenceg@costello ~/cs1400/project $ java FractionDemo
+Please enter 2 fractions --
+Fraction 1:
+enter an integer numerator: 12
+enter an integer denominator: 36
+Fraction 2:
+enter an integer numerator: 70
+enter an integer denominator: 84
+1/3 + 5/6 = 7/6 = 1.1666666
+1/3 - 5/6 = -1/2 = -0.5
+1/3 * 5/6 = 5/18 = 0.2777778
+1/3 / 5/6 = 2/5 = 0.4
+Do you want to continue? ('Y' or 'y' for yes, 'N' or 'n' for no) y
+Please enter 2 fractions --
+Fraction 1:
+enter an integer numerator: -8
+enter an integer denominator: 2
+Fraction 2:
+enter an integer numerator: 10
+enter an integer denominator: 10
+-4/1 + 1/1 = -3/1 = -3.0
+-4/1 - 1/1 = -5/1 = -5.0
+-4/1 * 1/1 = -4/1 = -4.0
+-4/1 / 1/1 = -4/1 = -4.0
+Do you want to continue? ('Y' or 'y' for yes, 'N' or 'n' for no) n
+12 fractions have been created.
+laurenceg@costello ~/cs1400/project $ java FractionDemo
+Please enter 2 fractions --
+Fraction 1:
+enter an integer numerator: 13
+enter an integer denominator: -1
+Fraction 2:
+enter an integer numerator: 0
+enter an integer denominator: 9
+-13/1 + 0/1 = -13/1 = -13.0
+-13/1 - 0/1 = -13/1 = -13.0
+-13/1 * 0/1 = 0/1 = 0.0
+denominator cannot be 0
+the fraction is set to 0/1
+-13/1 / 0/1 = 0/1 = 0.0
+Do you want to continue? ('Y' or 'y' for yes, 'N' or 'n' for no) y
+Please enter 2 fractions --
+Fraction 1:
+enter an integer numerator: 1212
+enter an integer denominator: 123
+Fraction 2:
+enter an integer numerator: -123
+enter an integer denominator: -1212
+404/41 + 41/404 = 164897/16564 = 9.955144
+404/41 - 41/404 = 161535/16564 = 9.752173
+404/41 * 41/404 = 1/1 = 1.0
+404/41 / 41/404 = 163216/1681 = 97.09459
+Do you want to continue? ('Y' or 'y' for yes, 'N' or 'n' for no) n
+12 fractions have been created.
+laurenceg@costello ~/cs1400/project $ java FractionDemo
+Please enter 2 fractions --
+Fraction 1:
+enter an integer numerator: 3
+enter an integer denominator: -20
+Fraction 2:
+enter an integer numerator: -2
+enter an integer denominator: 9
+-3/20 + -2/9 = -67/180 = -0.37222221
+-3/20 - -2/9 = 13/180 = 0.072222225
+-3/20 * -2/9 = 1/30 = 0.033333335
+-3/20 / -2/9 = 27/40 = 0.675
+Do you want to continue? ('Y' or 'y' for yes, 'N' or 'n' for no) n
+6 fractions have been created.
+laurenceg@costello ~/cs1400/project $ exit
+exit
+
+Script done on 2021-04-05 15:59:42-07:00 [COMMAND_EXIT_CODE="0"]

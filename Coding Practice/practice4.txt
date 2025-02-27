@@ -1,0 +1,238 @@
+Script started on 2021-02-25 14:42:19-08:00 [TERM="xterm" TTY="/dev/pts/55" COLUMNS="201" LINES="59"]
+laurenceg@costello ~/cs1400/codingPractice $ pwd
+/user/laurenceg/cs1400/codingPractice
+laurenceg@costello ~/cs1400/codingPractice $ ls -l
+total 52
+-rw------- 1 laurenceg cpp  796 Feb 24 12:26 Exam.java
+-rw------- 1 laurenceg cpp  777 Feb 18 12:23 FormattedOutput.class
+-rw------- 1 laurenceg cpp  548 Feb 17 10:50 FormattedOutput.java
+-rw------- 1 laurenceg cpp  929 Feb 24 13:27 HollowSquare.java
+-rw------- 1 laurenceg cpp 1216 Feb  9 17:23 KeyboardInput.class
+-rw------- 1 laurenceg cpp  875 Feb  9 15:18 KeyboardInput.java
+-rw------- 1 laurenceg cpp 1112 Feb  9 17:24 NameAndInitials.class
+-rw------- 1 laurenceg cpp  737 Feb  9 15:46 NameAndInitials.java
+-rw------- 1 laurenceg cpp  288 Feb 24 12:44 Pattern.java
+-rw------- 1 laurenceg cpp 1003 Feb  1 21:45 Pay.class
+-rw-r--r-- 1 laurenceg cpp  980 Feb  1 21:32 Pay.java
+-rw------- 1 laurenceg cpp 1109 Feb 25 14:39 SeparateEvenOddNumbers.java
+-rw------- 1 laurenceg cpp 1098 Feb 18 12:23 StringComparison.class
+-rw------- 1 laurenceg cpp 1416 Feb 17 11:13 StringComparison.java
+-rw------- 1 laurenceg cpp 1202 Feb  9 17:24 VendingMachine.class
+-rw------- 1 laurenceg cpp  919 Feb  9 17:18 VendingMachine.java
+-rw------- 1 laurenceg cpp   12 Feb 25 14:40 data.txt
+-rw------- 1 laurenceg cpp 2635 Feb  1 21:46 practice1.txt
+-rw------- 1 laurenceg cpp 6955 Feb  9 17:25 practice2.txt
+-rw------- 1 laurenceg cpp 7361 Feb 18 12:25 practice3.txt
+-rw------- 1 laurenceg cpp    0 Feb 25 14:42 practice4.txt
+-rw------- 1 laurenceg cpp 1284 Feb 18 12:24 roots.class
+-rw------- 1 laurenceg cpp 1095 Feb 18 12:17 roots.java
+laurenceg@costello ~/cs1400/codingPractice $ cat Exam.java
+import java.util.Scanner;
+public class Exam
+{
+   public static void main(String[] args)
+   {
+      Scanner kb = new Scanner(System.in);
+      int passes = 0, failures = 0, students, result;
+      for (students = 0; students < 10; students++)
+      {
+         System.out.print("Enter result (1=pass, 0=fail): ");
+         result = kb.nextInt();
+         while (!(result == 1 || result == 0))
+         {
+            System.out.print("Input not valid. Enter result (1=pass, 0=fail): ");
+            result = kb.nextInt();
+         }
+
+         if (result == 1)
+            passes++;
+         else
+            failures++;
+      }
+      System.out.println(passes + " passed\n"
+                         + failures + " failed");
+      if (passes < 5)
+         System.out.println("Raise tuition");
+   }
+}
+laurenceg@costello ~/cs1400/codingPractice $ javac Exam.java
+laurenceg@costello ~/cs1400/codingPractice $ java Exam
+Enter result (1=pass, 0=fail): 1
+Enter result (1=pass, 0=fail): 0
+Enter result (1=pass, 0=fail): 5
+Input not valid. Enter result (1=pass, 0=fail): 1
+Enter result (1=pass, 0=fail): 2
+Input not valid. Enter result (1=pass, 0=fail): 0
+Enter result (1=pass, 0=fail): 0
+Enter result (1=pass, 0=fail): 0
+Enter result (1=pass, 0=fail): 1
+Enter result (1=pass, 0=fail): 1
+Enter result (1=pass, 0=fail): 2
+Input not valid. Enter result (1=pass, 0=fail): 3
+Input not valid. Enter result (1=pass, 0=fail): 1
+Enter result (1=pass, 0=fail): 1
+6 passed
+4 failed
+laurenceg@costello ~/cs1400/codingPractice $ cat Pattern.java
+public class Pattern
+{
+   public static void main(String[] args)
+   {
+      for (int row = 6; row >= 1; row--)
+      {
+         for (int number = 1; number <= row; number++)
+         {
+            System.out.printf("%d ", number);
+         }
+         System.out.println();
+      }
+   }
+}
+laurenceg@costello ~/cs1400/codingPractice $ javac Pattern.java
+laurenceg@costello ~/cs1400/codingPractice $ java Pattern
+1 2 3 4 5 6
+1 2 3 4 5
+1 2 3 4
+1 2 3
+1 2
+1
+laurenceg@costello ~/cs1400/codingPractice $ cat HollowSquare.java
+import java.util.Scanner;
+public class HollowSquare
+{
+   public static void main(String[] args)
+   {
+      Scanner kb = new Scanner(System.in);
+      int n;
+
+      do
+      {
+         System.out.print("Enter an integer (1-20): ");
+         n = kb.nextInt();
+      } while (!(n >= 1 && n <= 20));
+
+      for (int row = 1; row <= n; row++)
+      {
+         if (row == 1 || row == n)
+         {
+            for (int star = 1; star <= n; star++)
+            {
+               System.out.print("*");
+            }
+            System.out.println();
+         }
+         else
+         {
+            for (int star = 1; star <= n; star++)
+            {
+               if (star == 1 || star == n)
+               {
+                  System.out.print("*");
+               }
+               else
+               {
+                  System.out.print(" ");
+               }
+            }
+            System.out.println();
+         }
+      }
+   }
+}
+laurenceg@costello ~/cs1400/codingPractice $ javac HollowSquare.java
+laurenceg@costello ~/cs1400/codingPractice $ java HollowSquare
+Enter an integer (1-20): 22
+Enter an integer (1-20): 100
+Enter an integer (1-20): 10
+**********
+*        *
+*        *
+*        *
+*        *
+*        *
+*        *
+*        *
+*        *
+**********
+laurenceg@costello ~/cs1400/codingPractice $ java HollowSquare
+Enter an integer (1-20): -1
+Enter an integer (1-20): 30
+Enter an integer (1-20): 25
+Enter an integer (1-20): 15
+***************
+*             *
+*             *
+*             *
+*             *
+*             *
+*             *
+*             *
+*             *
+*             *
+*             *
+*             *
+*             *
+*             *
+***************
+laurenceg@costello ~/cs1400/codingPractice $ cat SeparateEvenOddNumbers.java
+import java.util.Scanner;
+import java.io.*;
+
+public class SeparateEvenOddNumbers
+{
+   public static void main(String[] args) throws IOException
+   {
+      Scanner kb = new Scanner(System.in);
+      String fileName;
+
+      System.out.print("Enter an input filename: ");
+      fileName = kb.nextLine();
+
+      File file = new File("data.txt");
+      if (!file.exists())
+      {
+         System.out.println("ERROR: Input file is not available.");
+         System.exit(0);
+      }
+
+      Scanner inputFile = new Scanner(file);
+
+      PrintWriter outputFileEven = new PrintWriter("data.even");
+      PrintWriter outputFileOdd = new PrintWriter("data.odd");
+
+      int line;
+      int lineNumber = 1;
+      while(inputFile.hasNext())
+      {
+         line = inputFile.nextInt();
+         if (line % 2 == 0)
+         {
+            outputFileEven.println(line);
+         }
+         else
+         {
+            outputFileOdd.println(line);
+         }
+      }
+      System.out.println("Data written to data.even and data.odd");
+      inputFile.close();
+      outputFileEven.close();
+      outputFileOdd.close();
+   }
+}
+laurenceg@costello ~/cs1400/codingPractice $ javac SeparateEvenOddNumbers.java
+laurenceg@costello ~/cs1400/codingPractice $ java SeparateEvenOddNumbers
+Enter an input filename: data
+Data written to data.even and data.odd
+laurenceg@costello ~/cs1400/codingPractice $ cat data.even
+2
+8
+2
+8
+laurenceg@costello ~/cs1400/codingPractice $ cat data.odd
+7
+-7
+laurenceg@costello ~/cs1400/codingPractice $ exit
+exit
+
+Script done on 2021-02-25 14:46:05-08:00 [COMMAND_EXIT_CODE="0"]

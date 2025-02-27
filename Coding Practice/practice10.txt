@@ -1,0 +1,325 @@
+Script started on 2021-04-22 18:44:16-07:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="127" LINES="39"]
+laurenceg@costello ~/cs1400/codingPractice $ pwd
+/user/laurenceg/cs1400/codingPractice
+laurenceg@costello ~/cs1400/codingPractice $ ls -l
+total 426
+-rw------- 1 laurenceg cpp  1221 Apr  8 19:51 BinarySearch.class
+-rw------- 1 laurenceg cpp  1004 Apr  8 18:31 BinarySearch.java
+-rw------- 1 laurenceg cpp  1354 Apr  8 19:46 BoyNames.txt
+-rw------- 1 laurenceg cpp   927 Mar 11 14:54 Car.class
+-rw------- 1 laurenceg cpp   750 Mar  9 22:07 Car.java
+-rw------- 1 laurenceg cpp  1173 Mar 11 14:54 CarTest.class
+-rw------- 1 laurenceg cpp   622 Mar  9 22:02 CarTest.java
+-rw------- 1 laurenceg cpp   989 Mar 18 11:13 CarpetCalculator.class
+-rw------- 1 laurenceg cpp   740 Mar 16 21:25 CarpetCalculator.java
+-rw------- 1 laurenceg cpp  1124 Feb 25 14:42 Exam.class
+-rw------- 1 laurenceg cpp   796 Feb 24 12:26 Exam.java
+-rw------- 1 laurenceg cpp   777 Feb 18 12:23 FormattedOutput.class
+-rw------- 1 laurenceg cpp   548 Feb 17 10:50 FormattedOutput.java
+-rw------- 1 laurenceg cpp  3399 Mar  4 13:33 Geometry.class
+-rw-r--r-- 1 laurenceg cpp  5445 Mar  3 13:44 Geometry.java
+-rw------- 1 laurenceg cpp  1445 Apr  8 19:46 GirlNames.txt
+-rw------- 1 laurenceg cpp   859 Feb 25 14:44 HollowSquare.class
+-rw------- 1 laurenceg cpp   929 Feb 24 13:27 HollowSquare.java
+-rw------- 1 laurenceg cpp   835 Mar 18 11:05 HotDogStand.class
+-rw------- 1 laurenceg cpp   535 Mar 18 11:05 HotDogStand.java
+-rw------- 1 laurenceg cpp  1391 Mar 18 11:12 HotDogStandTest.class
+-rw------- 1 laurenceg cpp  1342 Mar 18 11:04 HotDogStandTest.java
+-rw------- 1 laurenceg cpp  1216 Feb  9 17:23 KeyboardInput.class
+-rw------- 1 laurenceg cpp   875 Feb  9 15:18 KeyboardInput.java
+-rw------- 1 laurenceg cpp  2074 Apr  8 19:48 Lottery.class
+-rw------- 1 laurenceg cpp  2033 Apr  8 18:30 Lottery.java
+-rw------- 1 laurenceg cpp  1112 Feb  9 17:24 NameAndInitials.class
+-rw------- 1 laurenceg cpp   737 Feb  9 15:46 NameAndInitials.java
+-rw------- 1 laurenceg cpp  2051 Apr  8 19:49 NameSearch.class
+-rw------- 1 laurenceg cpp  1951 Apr  8 18:30 NameSearch.java
+-rw------- 1 laurenceg cpp   453 Apr 22 18:44 PasswordTest.java
+-rw------- 1 laurenceg cpp  1281 Apr 22 18:43 PasswordVerifier.java
+-rw------- 1 laurenceg cpp   640 Feb 25 14:43 Pattern.class
+-rw------- 1 laurenceg cpp   288 Feb 24 12:44 Pattern.java
+-rw------- 1 laurenceg cpp  1003 Feb  1 21:45 Pay.class
+-rw-r--r-- 1 laurenceg cpp   980 Feb  1 21:32 Pay.java
+-rw------- 1 laurenceg cpp   794 Apr 15 10:47 PhoneBookEntry.class
+-rw------- 1 laurenceg cpp   617 Apr 15 10:43 PhoneBookEntry.java
+-rw------- 1 laurenceg cpp  1911 Apr 15 10:47 PhoneBookTest.class
+-rw------- 1 laurenceg cpp  2602 Apr 15 10:43 PhoneBookTest.java
+-rw------- 1 laurenceg cpp   902 Mar  4 13:34 PrimeChecker.class
+-rw------- 1 laurenceg cpp   772 Mar  3 14:29 PrimeChecker.java
+-rw------- 1 laurenceg cpp   762 Mar 16 21:26 RoomCarpet.class
+-rw------- 1 laurenceg cpp   463 Mar 16 21:26 RoomCarpet.java
+-rw------- 1 laurenceg cpp   738 Mar 16 20:58 RoomDimension.class
+-rw------- 1 laurenceg cpp   490 Mar 16 20:58 RoomDimension.java
+-rw------- 1 laurenceg cpp   655 Mar 11 14:55 SavingsAccount.class
+-rw------- 1 laurenceg cpp   716 Mar 10 12:44 SavingsAccount.java
+-rw------- 1 laurenceg cpp  1828 Mar 11 14:55 SavingsAccountTest.class
+-rw------- 1 laurenceg cpp  1566 Mar 10 13:39 SavingsAccountTest.java
+-rw------- 1 laurenceg cpp  1509 Apr  8 19:50 SelectionSort.class
+-rw------- 1 laurenceg cpp  1635 Apr  8 19:15 SelectionSort.java
+-rw------- 1 laurenceg cpp  1419 Feb 25 14:45 SeparateEvenOddNumbers.class
+-rw------- 1 laurenceg cpp  1109 Feb 25 14:39 SeparateEvenOddNumbers.java
+-rw------- 1 laurenceg cpp  1098 Feb 18 12:23 StringComparison.class
+-rw------- 1 laurenceg cpp  1416 Feb 17 11:13 StringComparison.java
+-rw------- 1 laurenceg cpp  1269 Mar  4 13:35 StringComparisonWithWildCard.class
+-rw------- 1 laurenceg cpp  1318 Mar  4 13:30 StringComparisonWithWildCard.java
+-rw------- 1 laurenceg cpp  1042 Apr 15 10:46 TwoDArray.class
+-rw------- 1 laurenceg cpp  1656 Apr 15 10:42 TwoDArray.java
+-rw------- 1 laurenceg cpp  1552 Apr 15 10:46 TwoDArrayTest.class
+-rw------- 1 laurenceg cpp  1033 Apr 15 10:43 TwoDArrayTest.java
+-rw------- 1 laurenceg cpp  1202 Feb  9 17:24 VendingMachine.class
+-rw------- 1 laurenceg cpp   919 Feb  9 17:18 VendingMachine.java
+-rw------- 1 laurenceg cpp  1095 Apr 22 18:43 WordReplacement.java
+-rw------- 1 laurenceg cpp  1431 Apr 22 18:43 WordReplacementWithMethod.java
+-rw------- 1 laurenceg cpp     8 Feb 25 14:45 data.even
+-rw------- 1 laurenceg cpp     5 Feb 25 14:45 data.odd
+-rw------- 1 laurenceg cpp   194 Apr  8 19:50 data.out
+-rw------- 1 laurenceg cpp    75 Apr  8 19:47 data.txt
+-rw-r--r-- 1 laurenceg cpp 46774 Mar 10 12:40 hs_err_pid123548.log
+-rw-r--r-- 1 laurenceg cpp 46663 Mar 11 14:54 hs_err_pid13225.log
+-rw-r--r-- 1 laurenceg cpp 46901 Apr  8 19:49 hs_err_pid23979.log
+-rw-r--r-- 1 laurenceg cpp 45531 Mar 10 13:32 hs_err_pid5719.log
+-rw------- 1 laurenceg cpp  2635 Feb  1 21:46 practice1.txt
+-rw------- 1 laurenceg cpp     0 Apr 22 18:44 practice10.txt
+-rw------- 1 laurenceg cpp  6955 Feb  9 17:25 practice2.txt
+-rw------- 1 laurenceg cpp  7361 Feb 18 12:25 practice3.txt
+-rw------- 1 laurenceg cpp  9080 Feb 25 14:46 practice4.txt
+-rw------- 1 laurenceg cpp 16851 Mar  4 13:36 practice5.txt
+-rw------- 1 laurenceg cpp 10972 Mar 11 14:56 practice6.txt
+-rw------- 1 laurenceg cpp 10624 Mar 18 11:14 practice7.txt
+-rw------- 1 laurenceg cpp 18126 Apr  8 19:51 practice8.txt
+-rw------- 1 laurenceg cpp 14405 Apr 15 10:48 practice9.txt
+-rw-r--r-- 1 laurenceg cpp     0 Mar 10 12:40 replay_pid123548.log
+-rw-r--r-- 1 laurenceg cpp     0 Mar 11 14:54 replay_pid13225.log
+-rw-r--r-- 1 laurenceg cpp     0 Apr  8 19:49 replay_pid23979.log
+-rw-r--r-- 1 laurenceg cpp     0 Mar 10 13:32 replay_pid5719.log
+-rw------- 1 laurenceg cpp  1284 Feb 18 12:24 roots.class
+-rw------- 1 laurenceg cpp  1095 Feb 18 12:17 roots.java
+laurenceg@costello ~/cs1400/codingPractice $ cat WordReplacement.java
+import java.util.Scanner;
+public class WordReplacement
+{
+   public static void main(String[] args)
+   {
+      Scanner kb = new Scanner(System.in);
+      String phrase;
+      String rephrasedFirst;
+      String rephrasedSecond;
+      int hateStart;
+
+      System.out.println("enter a line of text (blank line to stop):");
+
+      do
+      {
+         phrase = kb.nextLine();
+
+         if(phrase.equals(""))
+            break;
+
+         if(phrase.indexOf("hate") == -1)
+         {
+            System.out.println("hate is not found\n");
+            System.out.println("enter another line (blank line to stop):");
+            continue;
+         }
+
+         hateStart = phrase.indexOf("hate") - 1;
+
+         rephrasedFirst = phrase.substring(0, hateStart);
+         rephrasedSecond = phrase.substring(hateStart + "hate".length() + 1);
+
+         System.out.println("I have rephrased that line to read: ");
+         System.out.printf("%s love%s\n\n", rephrasedFirst, rephrasedSecond);
+         System.out.println("enter another line (blank line to stop):");
+      }while (!(phrase.equals("")));
+   }
+}
+
+laurenceg@costello ~/cs1400/codingPractice $ javac WordReplacement.java
+laurenceg@costello ~/cs1400/codingPractice $ java WordReplacement
+enter a line of text (blank line to stop):
+i hate you
+I have rephrased that line to read:
+i love you
+
+enter another line (blank line to stop):
+i hate, hate, hate you.
+I have rephrased that line to read:
+i love, hate, hate you.
+
+enter another line (blank line to stop):
+i love you
+hate is not found
+
+enter another line (blank line to stop):
+
+laurenceg@costello ~/cs1400/codingPractice $ cat WordReplacementWithMethod.java
+import java.util.Scanner;
+public class WordReplacementWithMethod
+{
+   public static void main(String[] args)
+   {
+      Scanner kb = new Scanner(System.in);
+      String blankLine;
+      String replacedWord, newSubstring;
+
+      System.out.println("enter a line of text (blank line to stop):");
+
+      do
+      {
+         blankLine = kb.nextLine();
+         if(blankLine.equals(""))
+         {
+            break;
+         }
+         System.out.print("enter a substring to be replaced: ");
+         replacedWord = kb.nextLine();
+         System.out.print("enter the new substring: ");
+         newSubstring = kb.nextLine();
+         System.out.println(replaceSubstring(blankLine, replacedWord, newSubstring));
+         System.out.println();
+         System.out.println("enter another line (blank line to stop)");
+      } while(!(blankLine.equals("")));
+   }
+
+   public static String replaceSubstring(String string1, String string2, String string3)
+   {
+      int position = string1.indexOf(string2);
+      int positionEnd = position + string2.length();
+      String fixedString, fixedString2;
+      String finalString;
+
+      if(position == -1)
+      {
+         String str = string2 + " is not found";
+         return str;
+      }
+
+      fixedString = string1.substring(0, position);
+      fixedString2 = string1.substring(positionEnd);
+
+      finalString = fixedString + string3 + fixedString2;
+
+      return finalString;
+   }
+}
+
+laurenceg@costello ~/cs1400/codingPractice $ javac WordReplacementWithMethod.java
+laurenceg@costello ~/cs1400/codingPractice $ java WordReplacementWithMethod
+enter a line of text (blank line to stop):
+I love you
+enter a substring to be replaced: hate
+enter the new substring: love
+hate is not found
+
+enter another line (blank line to stop)
+I hate you
+enter a substring to be replaced: hate
+enter the new substring: love, love, love
+I love, love, love you
+
+enter another line (blank line to stop)
+
+laurenceg@costello ~/cs1400/codingPractice $ cat PasswordVerifier.java
+public class PasswordVerifier
+{
+   private String password;
+   private static final int PASSWORD_LENGTH = 6;
+
+   public static boolean passwordCheck(String passwordInput)
+   {
+      boolean passLength = false;
+      boolean uppercase = false;
+      boolean lowercase = false;
+      boolean digit = false;
+      if(passwordInput.length() >= PASSWORD_LENGTH)
+      {
+         passLength = true;
+      }
+
+      for(int i = 0; i < passwordInput.length(); i++)
+      {
+         char charCheck = passwordInput.charAt(i);
+         if(Character.isLowerCase(charCheck))
+         {
+            lowercase = true;
+         }
+         if(Character.isUpperCase(charCheck))
+         {
+            uppercase = true;
+         }
+         if(Character.isDigit(charCheck))
+         {
+            digit = true;
+         }
+      }
+
+      if(!passLength)
+      {
+         System.out.println("- length must be at least 6");
+      }
+      if(!uppercase)
+      {
+         System.out.println("- need at least one uppercase letter");
+      }
+      if(!lowercase)
+      {
+         System.out.println("- need at least one lowercase letter");
+      }
+      if(!digit)
+      {
+         System.out.println("- need at least one digit");
+      }
+
+      return passLength && uppercase && lowercase && digit;
+   }
+}
+
+laurenceg@costello ~/cs1400/codingPractice $ cat PasswordTest.java
+import java.util.Scanner;
+public class PasswordTest
+{
+   public static void main(String[] args)
+   {
+      Scanner kb = new Scanner(System.in);
+      String password;
+
+      System.out.print("Enter a password: ");
+      password = kb.nextLine();
+
+      if(PasswordVerifier.passwordCheck(password))
+      {
+         System.out.println("Valid password");
+      }
+      else
+      {
+         System.out.println("Invalid password");
+      }
+
+   }
+}
+
+laurenceg@costello ~/cs1400/codingPractice $ javac PasswordTest.java
+laurenceg@costello ~/cs1400/codingPractice $ java PasswordTest
+Enter a password: Hello2021
+Valid password
+laurenceg@costello ~/cs1400/codingPractice $ java PasswordTest
+Enter a password: 12 Cats
+Valid password
+laurenceg@costello ~/cs1400/codingPractice $ java PasswordTest
+Enter a password: aBC45
+- length must be at least 6
+Invalid password
+laurenceg@costello ~/cs1400/codingPractice $ java PasswordTest
+Enter a password: 123456
+- need at least one uppercase letter
+- need at least one lowercase letter
+Invalid password
+laurenceg@costello ~/cs1400/codingPractice $ java PasswordTest
+Enter a password: abc
+- length must be at least 6
+- need at least one uppercase letter
+- need at least one digit
+Invalid password
+laurenceg@costello ~/cs1400/codingPractice $ exit
+exit
+
+Script done on 2021-04-22 18:47:29-07:00 [COMMAND_EXIT_CODE="0"]

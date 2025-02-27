@@ -1,0 +1,414 @@
+Script started on 2021-03-04 13:32:54-08:00 [TERM="xterm" TTY="/dev/pts/122" COLUMNS="149" LINES="59"]
+laurenceg@costello ~/cs1400/codingPractice $ pwd
+/user/laurenceg/cs1400/codingPractice
+laurenceg@costello ~/cs1400/codingPractice $ ls -l
+total 80
+-rw------- 1 laurenceg cpp 1124 Feb 25 14:42 Exam.class
+-rw------- 1 laurenceg cpp  796 Feb 24 12:26 Exam.java
+-rw------- 1 laurenceg cpp  777 Feb 18 12:23 FormattedOutput.class
+-rw------- 1 laurenceg cpp  548 Feb 17 10:50 FormattedOutput.java
+-rw-r--r-- 1 laurenceg cpp 5445 Mar  3 13:44 Geometry.java
+-rw------- 1 laurenceg cpp  859 Feb 25 14:44 HollowSquare.class
+-rw------- 1 laurenceg cpp  929 Feb 24 13:27 HollowSquare.java
+-rw------- 1 laurenceg cpp 1216 Feb  9 17:23 KeyboardInput.class
+-rw------- 1 laurenceg cpp  875 Feb  9 15:18 KeyboardInput.java
+-rw------- 1 laurenceg cpp 1112 Feb  9 17:24 NameAndInitials.class
+-rw------- 1 laurenceg cpp  737 Feb  9 15:46 NameAndInitials.java
+-rw------- 1 laurenceg cpp  640 Feb 25 14:43 Pattern.class
+-rw------- 1 laurenceg cpp  288 Feb 24 12:44 Pattern.java
+-rw------- 1 laurenceg cpp 1003 Feb  1 21:45 Pay.class
+-rw-r--r-- 1 laurenceg cpp  980 Feb  1 21:32 Pay.java
+-rw------- 1 laurenceg cpp  772 Mar  3 14:29 PrimeChecker.java
+-rw------- 1 laurenceg cpp 1419 Feb 25 14:45 SeparateEvenOddNumbers.class
+-rw------- 1 laurenceg cpp 1109 Feb 25 14:39 SeparateEvenOddNumbers.java
+-rw------- 1 laurenceg cpp 1098 Feb 18 12:23 StringComparison.class
+-rw------- 1 laurenceg cpp 1416 Feb 17 11:13 StringComparison.java
+-rw------- 1 laurenceg cpp 1318 Mar  4 13:30 StringComparisonWithWildCard.java
+-rw------- 1 laurenceg cpp 1202 Feb  9 17:24 VendingMachine.class
+-rw------- 1 laurenceg cpp  919 Feb  9 17:18 VendingMachine.java
+-rw------- 1 laurenceg cpp    8 Feb 25 14:45 data.even
+-rw------- 1 laurenceg cpp    5 Feb 25 14:45 data.odd
+-rw------- 1 laurenceg cpp   12 Feb 25 14:40 data.txt
+-rw------- 1 laurenceg cpp 2635 Feb  1 21:46 practice1.txt
+-rw------- 1 laurenceg cpp 6955 Feb  9 17:25 practice2.txt
+-rw------- 1 laurenceg cpp 7361 Feb 18 12:25 practice3.txt
+-rw------- 1 laurenceg cpp 9080 Feb 25 14:46 practice4.txt
+-rw------- 1 laurenceg cpp    0 Mar  4 13:32 practice5.txt
+-rw------- 1 laurenceg cpp 1284 Feb 18 12:24 roots.class
+-rw------- 1 laurenceg cpp 1095 Feb 18 12:17 roots.java
+laurenceg@costello ~/cs1400/codingPractice $ cat Geometry.java
+//CS1400 - Coding Practice #5
+import java.util.Scanner;
+public class Geometry
+{
+   public static void main (String [] args)
+   {
+      int choice;         //the user's choice
+      double value = 0;   //the value returned from the method
+      char letter;        //the Y or N from the user's decision to exit
+      double radius;      //the radius of the circle
+      double length;      //the length of the rectangle
+      double width;       //the width of the rectangle
+      double height;      //the height of the triangle
+      double base;        //the base of the triangle
+      double side1;       //the first side of the triangle
+      double side2;       //the second side of the triangle
+      double side3;       //the third side of the triangle
+
+      //create a scanner object to read from the keyboard
+      Scanner keyboard = new Scanner (System.in);
+      //do loop was chose to allow the menu to be displayed first
+      do
+      {
+         printMenu();
+         choice = keyboard.nextInt();
+         switch (choice)
+         {
+            case 1:
+               System.out.print("Enter the radius of the circle:  ");
+               radius = keyboard.nextDouble();
+               value = circleArea(radius);
+               System.out.println("The area of the circle is " + value);
+               break;
+            case 2:
+               System.out.print("Enter the length of the rectangle:  ");
+               length = keyboard.nextDouble();
+               System.out.print("Enter the width of the rectangle:  ");
+               width = keyboard.nextDouble();
+               value = rectangleArea(length, width);
+               System.out.println("The area of the rectangle is " + value);
+               break;
+            case 3:
+               System.out.print("Enter the height of the triangle:  ");
+               height = keyboard.nextDouble();
+               System.out.print("Enter the base of the triangle:  ");
+               base = keyboard.nextDouble();
+               value = triangleArea(base, height);
+               System.out.println("The area of the triangle is " + value);
+               break;
+            case 4:
+               System.out.print("Enter the radius of the circle:  ");
+               radius = keyboard.nextDouble();
+               value = circleCircumference(radius);
+               System.out.println("The circumference of the circle is "
+                                  + value);
+               break;
+            case 5:
+               System.out.print("Enter the length of the rectangle:  ");
+               length = keyboard.nextDouble();
+               System.out.print("Enter the width of the rectangle:  ");
+               width = keyboard.nextDouble();
+               value = rectanglePerimeter(length, width);
+               System.out.println("The perimeter of the rectangle is "
+                                  + value);
+               break;
+            case 6:
+               System.out.print("Enter the length of side 1:  ");
+               side1 = keyboard.nextDouble();
+               System.out.print("Enter the length of side 2:  ");
+               side2 = keyboard.nextDouble();
+               System.out.print("Enter the length of side 3:  ");
+               side3 = keyboard.nextDouble();
+               value = trianglePerimeter(side1, side2, side3);
+               System.out.println("The perimeter of the triangle is "
+                                  + value);
+               break;
+            default:
+               System.out.println("You did not enter a valid choice.");
+         }
+
+         //consumes the new line character after the number
+         keyboard.nextLine();
+
+         System.out.println("Do you want to exit the program (Y/N)?:  ");
+         String answer = keyboard.nextLine();
+         letter = answer.charAt(0);
+
+      } while (letter != 'Y' && letter != 'y');
+   }
+
+   public static void printMenu()
+   {
+      System.out.println("This is a geometry calculator");
+      System.out.println("Choose what you would like to calculate");
+      System.out.println("1. Find the area of a circle");
+      System.out.println("2. Find the area of a rectangle");
+      System.out.println("3. Find the area of a triangle");
+      System.out.println("4. Find the circumference of a circle");
+      System.out.println("5. Find the perimeter of a rectangle");
+      System.out.println("6. Find the perimeter of a triangle");
+      System.out.print("Enter the number of your choice: ");
+   }
+
+   public static double circleArea(double radius)
+   {
+      double area;
+      area = (3.14) * Math.pow(radius,2);
+      return area;
+   }
+
+   public static double rectangleArea(double length, double width)
+   {
+      double area;
+      area = length * width;
+      return area;
+   }
+
+   public static double triangleArea(double base, double height)
+   {
+      double area;
+      area = (0.5) * base * height;
+      return area;
+   }
+
+   public static double circleCircumference(double radius)
+   {
+      double area;
+      area = 2 * 3.14 * radius;
+      return area;
+   }
+
+   public static double rectanglePerimeter(double length, double width)
+   {
+      double perimeter;
+      perimeter = (2 * length) + (2 * width);
+      return perimeter;
+   }
+
+   public static double trianglePerimeter(double sideOne, double sideTwo, double sideThree)
+   {
+      double perimeter;
+      perimeter = sideOne + sideTwo + sideThree;
+      return perimeter;
+   }
+
+}
+laurenceg@costello ~/cs1400/codingPractice $ javac Geometry.java
+laurenceg@costello ~/cs1400/codingPractice $ java Geometry
+This is a geometry calculator
+Choose what you would like to calculate
+1. Find the area of a circle
+2. Find the area of a rectangle
+3. Find the area of a triangle
+4. Find the circumference of a circle
+5. Find the perimeter of a rectangle
+6. Find the perimeter of a triangle
+Enter the number of your choice: 1
+Enter the radius of the circle:  5
+The area of the circle is 78.5
+Do you want to exit the program (Y/N)?:
+n
+This is a geometry calculator
+Choose what you would like to calculate
+1. Find the area of a circle
+2. Find the area of a rectangle
+3. Find the area of a triangle
+4. Find the circumference of a circle
+5. Find the perimeter of a rectangle
+6. Find the perimeter of a triangle
+Enter the number of your choice: 2
+Enter the length of the rectangle:  2
+Enter the width of the rectangle:  3
+The area of the rectangle is 6.0
+Do you want to exit the program (Y/N)?:
+n
+This is a geometry calculator
+Choose what you would like to calculate
+1. Find the area of a circle
+2. Find the area of a rectangle
+3. Find the area of a triangle
+4. Find the circumference of a circle
+5. Find the perimeter of a rectangle
+6. Find the perimeter of a triangle
+Enter the number of your choice: 3
+Enter the height of the triangle:  2
+Enter the base of the triangle:  5
+The area of the triangle is 5.0
+Do you want to exit the program (Y/N)?:
+n
+This is a geometry calculator
+Choose what you would like to calculate
+1. Find the area of a circle
+2. Find the area of a rectangle
+3. Find the area of a triangle
+4. Find the circumference of a circle
+5. Find the perimeter of a rectangle
+6. Find the perimeter of a triangle
+Enter the number of your choice: 4
+Enter the radius of the circle:  10
+The circumference of the circle is 62.800000000000004
+Do you want to exit the program (Y/N)?:
+n
+This is a geometry calculator
+Choose what you would like to calculate
+1. Find the area of a circle
+2. Find the area of a rectangle
+3. Find the area of a triangle
+4. Find the circumference of a circle
+5. Find the perimeter of a rectangle
+6. Find the perimeter of a triangle
+Enter the number of your choice: 5
+Enter the length of the rectangle:  2
+Enter the width of the rectangle:  6
+The perimeter of the rectangle is 16.0
+Do you want to exit the program (Y/N)?:
+n
+This is a geometry calculator
+Choose what you would like to calculate
+1. Find the area of a circle
+2. Find the area of a rectangle
+3. Find the area of a triangle
+4. Find the circumference of a circle
+5. Find the perimeter of a rectangle
+6. Find the perimeter of a triangle
+Enter the number of your choice: 6
+Enter the length of side 1:  5
+Enter the length of side 2:  3
+Enter the length of side 3:  8
+The perimeter of the triangle is 16.0
+Do you want to exit the program (Y/N)?:
+y
+laurenceg@costello ~/cs1400/codingPractice $ cat PrimeChecker.java
+import java.util.Scanner;
+public class PrimeChecker
+{
+   public static void main(String[] args)
+   {
+      Scanner kb = new Scanner (System.in);
+
+      int number;
+
+      System.out.print("Enter a number: ");
+      number = kb.nextInt();
+      if (isPrime(number))
+         System.out.println("That is a prime number.");
+      else
+         System.out.println("That is not a prime number.");
+   }
+
+   public static boolean isPrime(int number)
+   {
+      int remainder = 0;
+
+      for (int i = number; i > 1; i--)
+      {
+         if(i == number)
+         {
+            i--;
+         }
+
+         remainder = number % i;
+         if(remainder == 0)
+            break;
+      }
+
+      if(remainder == 0)
+         return false;
+      else
+         return true;
+   }
+}
+laurenceg@costello ~/cs1400/codingPractice $ javac PrimeChecker.java
+laurenceg@costello ~/cs1400/codingPractice $ java PrimeChecker
+Enter a number: 1
+That is not a prime number.
+laurenceg@costello ~/cs1400/codingPractice $ java PrimeChecker
+Enter a number: 2
+That is a prime number.
+laurenceg@costello ~/cs1400/codingPractice $ java PrimeChecker
+Enter a number: 3
+That is a prime number.
+laurenceg@costello ~/cs1400/codingPractice $ java PrimeChecker
+Enter a number: 4
+That is not a prime number.
+laurenceg@costello ~/cs1400/codingPractice $ java PrimeChecker
+Enter a number: 5
+That is a prime number.
+laurenceg@costello ~/cs1400/codingPractice $ java PrimeChecker
+Enter a number: 6
+That is not a prime number.
+laurenceg@costello ~/cs1400/codingPractice $ cat StringComparisonWithWildCard.java
+import java.util.Scanner;
+public class StringComparisonWithWildCard
+{
+   public static void main (String[] args)
+   {
+      Scanner kb = new Scanner (System.in);
+
+      String firstString;
+      String secondString;
+
+      System.out.print("Enter string 1: ");
+      firstString = kb.nextLine();
+      System.out.print("Enter string 2: ");
+      secondString = kb.nextLine();
+
+      if (match(firstString, secondString))
+         System.out.println("They are equal.");
+      else
+         System.out.println("They are different.");
+   }
+
+   public static boolean match (String stringOne, String stringTwo)
+   {
+      stringOne = stringOne.toLowerCase();
+      stringTwo = stringTwo.toLowerCase();
+
+      boolean theReturn = true;
+      int firstStringLength = stringOne.length() - 1;
+      int secondStringLength = stringTwo.length() - 1;
+
+      if (firstStringLength != secondStringLength)
+         return false;
+
+      if (stringOne.equals(stringTwo))
+         return true;
+
+      for (int i = 0, j = 0; i <= firstStringLength; i++, j++)
+      {
+         char firstChar = stringOne.charAt(i);
+         char secondChar = stringTwo.charAt(j);
+
+         if (firstChar == '?' || secondChar == '?')
+            continue;
+
+         if (firstChar != secondChar)
+            return false;
+      }
+      return true;
+   }
+
+}
+laurenceg@costello ~/cs1400/codingPractice $ javac StringComparisonWithWildCard.java
+laurenceg@costello ~/cs1400/codingPractice $ java StringComparisonWithWildCard
+Enter string 1: abc
+Enter string 2: ab
+They are different.
+laurenceg@costello ~/cs1400/codingPractice $ java StringComparisonWithWildCard
+Enter string 1:
+Enter string 2:
+They are equal.
+laurenceg@costello ~/cs1400/codingPractice $ java StringComparisonWithWildCard
+Enter string 1: abc
+Enter string 2: abc
+They are equal.
+laurenceg@costello ~/cs1400/codingPractice $ java StringComparisonWithWildCard
+Enter string 1: abc
+Enter string 2: aeb
+They are different.
+laurenceg@costello ~/cs1400/codingPractice $ java StringComparisonWithWildCard
+Enter string 1: ab?
+Enter string 2: abd
+They are equal.
+laurenceg@costello ~/cs1400/codingPractice $ java StringComparisonWithWildCard
+Enter string 1: a?c
+Enter string 2: adc
+They are equal.
+laurenceg@costello ~/cs1400/codingPractice $ java StringComparisonWithWildCard
+Enter string 1: ab?
+Enter string 2: a?c
+They are equal.
+laurenceg@costello ~/cs1400/codingPractice $ exit
+exit
+
+Script done on 2021-03-04 13:36:47-08:00 [COMMAND_EXIT_CODE="0"]

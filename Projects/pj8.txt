@@ -1,0 +1,212 @@
+Script started on 2021-05-09 20:40:17-07:00 [TERM="xterm" TTY="/dev/pts/6" COLUMNS="128" LINES="39"]
+laurenceg@abbott ~/cs1400/project $ pwd
+/user/laurenceg/cs1400/project
+laurenceg@abbott ~/cs1400/project $ ls -l
+total 642
+-rw------- 1 laurenceg cpp   1874 Feb 11 11:19 Calculations.class
+-rw------- 1 laurenceg cpp   2708 Feb 11 11:15 Calculations.java
+-rw------- 1 laurenceg cpp   1293 May  9 20:39 Calculator.java
+-rw------- 1 laurenceg cpp   1123 May  9 20:27 CalculatorTest.java
+-rw------- 1 laurenceg cpp   1704 May  2 18:27 Employee.class
+-rw------- 1 laurenceg cpp   2174 May  2 18:26 Employee.java
+-rw------- 1 laurenceg cpp   2307 Apr  5 15:55 Fraction.class
+-rw------- 1 laurenceg cpp   3504 Apr  5 15:52 Fraction.java
+-rw------- 1 laurenceg cpp   1854 Apr  5 15:57 FractionDemo.class
+-rw------- 1 laurenceg cpp   2065 Apr  5 15:52 FractionDemo.java
+-rw------- 1 laurenceg cpp   1485 Feb 28 10:05 PalindromeTester.class
+-rw------- 1 laurenceg cpp   1668 Feb 25 21:22 PalindromeTester.java
+-rw------- 1 laurenceg cpp   1415 May  2 18:27 ProductionWorker.class
+-rw------- 1 laurenceg cpp   1207 May  2 18:26 ProductionWorker.java
+-rw------- 1 laurenceg cpp   1606 Feb 21 17:18 Tax.class
+-rw------- 1 laurenceg cpp   2040 Feb 21 17:06 Tax.java
+-rw------- 1 laurenceg cpp   1571 Mar 13 16:28 Temperature.class
+-rw------- 1 laurenceg cpp   1951 Mar 13 16:23 Temperature.java
+-rw------- 1 laurenceg cpp   2231 Mar 13 16:28 TemperatureDemo.class
+-rw------- 1 laurenceg cpp   2157 Mar 13 16:23 TemperatureDemo.java
+-rw------- 1 laurenceg cpp    644 Apr 17 21:29 Trivia.class
+-rw------- 1 laurenceg cpp    580 Apr 17 21:22 Trivia.java
+-rw------- 1 laurenceg cpp   2112 Apr 17 21:32 TriviaGameV1.class
+-rw------- 1 laurenceg cpp   1746 Apr 17 21:31 TriviaGameV1.java
+-rw------- 1 laurenceg cpp    603 Apr 17 21:32 TriviaGameV1Test.class
+-rw------- 1 laurenceg cpp    358 Apr 17 21:23 TriviaGameV1Test.java
+-rw------- 1 laurenceg cpp   2205 Apr 17 21:29 TriviaGameV2.class
+-rw------- 1 laurenceg cpp   1863 Apr 17 21:28 TriviaGameV2.java
+-rw------- 1 laurenceg cpp    603 Apr 17 21:34 TriviaGameV2Test.class
+-rw------- 1 laurenceg cpp    359 Apr 17 21:22 TriviaGameV2Test.java
+-rw------- 1 laurenceg cpp    388 May  9 20:26 UnknownOperatorException.java
+-rw------- 1 laurenceg cpp   1110 May  3 11:28 WorkerTest.class
+-rw------- 1 laurenceg cpp    966 May  3 11:27 WorkerTest.java
+-rw-r--r-- 1 laurenceg cpp  46634 Apr  4 10:52 hs_err_pid104667.log
+-rw-r--r-- 1 laurenceg cpp  47233 May  3 11:27 hs_err_pid15946.log
+-rw-r--r-- 1 laurenceg cpp  47428 Apr  5 15:55 hs_err_pid39461.log
+-rw-r--r-- 1 laurenceg cpp  46728 Apr 17 21:28 hs_err_pid58373.log
+-rw-r--r-- 1 laurenceg cpp  46834 Apr 17 21:32 hs_err_pid59367.log
+-rw------- 1 laurenceg cpp   5710 Feb 11 11:20 pj1.txt
+-rw------- 1 laurenceg cpp   9828 Feb 21 17:22 pj2.txt
+-rw------- 1 laurenceg cpp   6226 Feb 28 10:08 pj3.txt
+-rw------- 1 laurenceg cpp   6749 Mar 13 16:29 pj4.txt
+-rw------- 1 laurenceg cpp  13098 Apr  5 15:59 pj5.txt
+-rw------- 1 laurenceg cpp  15100 Apr 17 21:36 pj6.txt
+-rw------- 1 laurenceg cpp  10020 May  3 11:28 pj7.txt
+-rw------- 1 laurenceg cpp      0 May  9 20:40 pj8.txt
+-rw-r--r-- 1 laurenceg cpp      0 Apr  4 10:52 replay_pid104667.log
+-rw-r--r-- 1 laurenceg cpp      0 May  3 11:27 replay_pid15946.log
+-rw-r--r-- 1 laurenceg cpp 212396 Apr  5 15:55 replay_pid39461.log
+-rw-r--r-- 1 laurenceg cpp      0 Apr 17 21:28 replay_pid58373.log
+-rw-r--r-- 1 laurenceg cpp      0 Apr 17 21:32 replay_pid59367.log
+laurenceg@abbott ~/cs1400/project $ cat UnknownOperatorException.java
+//Laurence Timothy Manalo Garcia
+//CS 1400, Section 03
+//Project 8 - Calculator with Exception Handling
+//May 7th, 2021
+
+public class UnknownOperatorException extends Exception
+{
+   public UnknownOperatorException()
+   {
+      super(" is an unknown operation.");
+   }
+
+   public UnknownOperatorException(String operation)
+   {
+      super(operation + " is an unknown operation.");
+   }
+}
+laurenceg@abbott ~/cs1400/project $ cat Calculator.java
+//Laurence Timothy Manalo Garcia
+//CS 1400, Section 03
+//Project 8 - Calculator with Exception Handling
+//May 7th, 2021
+public class Calculator
+{
+   private double result;
+
+   public Calculator()
+   {
+      result = 0.0;
+   }
+
+   public double getResult()
+   {
+      return result;
+   }
+   public void doCalculation (String expression) throws UnknownOperatorException, NumberFormatException
+   {
+      double numInput;
+
+      while (expression.equals(""))
+      {
+         System.out.println("Must specify operand");
+         return;
+      }
+
+      expression = expression.trim();
+      expression = expression.replace(" ","");
+
+      if(!(expression.startsWith("+") || expression.startsWith("-") || expression.startsWith("*") || expression.startsWith("/")))
+      {
+         throw new UnknownOperatorException(expression.substring(0, 1));
+      }
+
+      expression = expression.substring(0);
+      numInput = Double.parseDouble(expression.substring(1));
+
+      if(expression.startsWith("+"))
+      {
+         result += numInput;
+      }
+      if(expression.startsWith("-"))
+      {
+         result -= numInput;
+      }
+      if(expression.startsWith("*"))
+      {
+         result *= numInput;
+      }
+      if(expression.startsWith("/"))
+      {
+         result /= numInput;
+      }
+   }
+}
+
+laurenceg@abbott ~/cs1400/project $ cat CalculatorTest.java
+//Laurence Timothy Manalo Garcia
+//CS 1400, Section 03
+//Project 8 - Calculator with Exception Handling
+//May 7th, 2021
+
+import java.util.Scanner;
+public class CalculatorTest
+{
+   public static void main(String[] args)
+   {
+      Scanner kb = new Scanner(System.in);
+      Calculator cal = new Calculator();
+      String input;
+
+      System.out.println("Calculator is on.");
+      System.out.println("result = " + cal.getResult());
+      input = kb.nextLine();
+
+      while(input.compareTo("r") != 0)
+      {
+         try
+         {
+            cal.doCalculation(input);
+            System.out.println("updated result = " + cal.getResult());
+            input = kb.nextLine();
+         }
+         catch(UnknownOperatorException e)
+         {
+            System.out.println(e.getMessage());
+            input = kb.nextLine();
+            continue;
+         }
+         catch(NumberFormatException e)
+         {
+            System.out.println("Invalid non-numeric operand.");
+            input = kb.nextLine();
+            continue;
+         }
+      }
+
+      System.out.println("final result = " + cal.getResult());
+   }
+}
+
+laurenceg@abbott ~/cs1400/project $ javac CalculatorTest.java
+laurenceg@abbott ~/cs1400/project $ java CalculatorTest
+Calculator is on.
+result = 0.0
+   +3
+updated result = 3.0
+-    5
+updated result = -2.0
+ *    10
+updated result = -20.0
+/-2
+updated result = 10.0
+%3
+% is an unknown operation.
+# quit
+# is an unknown operation.
+
+Must specify operand
+updated result = 10.0
++-*/
+Invalid non-numeric operand.
++a
+Invalid non-numeric operand.
+* daisy
+Invalid non-numeric operand.
+/ 1.2.3
+Invalid non-numeric operand.
+   -8
+updated result = 2.0
+r
+final result = 2.0
+laurenceg@abbott ~/cs1400/project $ exit
+exit
+
+Script done on 2021-05-09 20:42:30-07:00 [COMMAND_EXIT_CODE="0"]

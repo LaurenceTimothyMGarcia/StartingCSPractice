@@ -1,0 +1,64 @@
+Script started on 2021-02-01 21:45:09-08:00 [TERM="xterm" TTY="/dev/pts/14" COLUMNS="153" LINES="51"]
+laurenceg@costello ~/cs1400/codingPractice $ pwd
+/user/laurenceg/cs1400/codingPractice
+laurenceg@costello ~/cs1400/codingPractice $ ls -l
+total 2
+-rw-r--r-- 1 laurenceg cpp 980 Feb  1 21:32 Pay.java
+-rw------- 1 laurenceg cpp   0 Feb  1 21:44 practice1.txt
+laurenceg@costello ~/cs1400/codingPractice $ cat Pay.java
+//Laurence Garcia
+//CS 1400, section 03
+//Coding practice #1
+//Feb 01, 2021
+
+//This program calculates the user's gross pay
+
+import java.util.Scanner;  //to be able to read from the keyboard
+
+public class Pay
+{
+   public static void main(String [] args)
+   {
+
+      //create a Scanner object to read from the keyboard
+      Scanner keyboard = new Scanner(System.in);
+
+      //identifier declarations
+      double hours;     //number of hours worked
+      double rate;      //hourly pay rate
+      double pay;       //gross pay
+
+      //display prompts and get input
+      System.out.print("How many hours did you work? ");
+      hours = keyboard.nextDouble();
+      System.out.print("How much do you get paid per hour? ");
+      rate = keyboard.nextDouble();
+
+      //calculations
+      if(hours <= 40)
+         pay = hours * rate;
+      else
+         pay = (hours - 40) * (1.5 * rate) + 40 * rate;
+
+      //display results
+      System.out.println("You earned $" + pay);
+   }
+}
+
+laurenceg@costello ~/cs1400/codingPractice $ javac Pay.java
+laurenceg@costello ~/cs1400/codingPractice $ java Pay
+How many hours did you work? 39
+How much do you get paid per hour? 10
+You earned $390.0
+laurenceg@costello ~/cs1400/codingPractice $ java Pay
+How many hours did you work? 40
+How much do you get paid per hour? 10
+You earned $400.0
+laurenceg@costello ~/cs1400/codingPractice $ java Pay
+How many hours did you work? 41
+How much do you get paid per hour? 10
+You earned $415.0
+laurenceg@costello ~/cs1400/codingPractice $ exit
+exit
+
+Script done on 2021-02-01 21:46:27-08:00 [COMMAND_EXIT_CODE="0"]

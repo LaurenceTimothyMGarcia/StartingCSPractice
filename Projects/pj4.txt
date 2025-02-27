@@ -1,0 +1,199 @@
+Script started on 2021-03-13 16:28:23-08:00 [TERM="xterm" TTY="/dev/pts/143" COLUMNS="96" LINES="59"]
+laurenceg@costello ~/cs1400/project $ pwd
+/user/laurenceg/cs1400/project
+laurenceg@costello ~/cs1400/project $ ls -l
+total 46
+-rw------- 1 laurenceg cpp 1874 Feb 11 11:19 Calculations.class
+-rw------- 1 laurenceg cpp 2708 Feb 11 11:15 Calculations.java
+-rw------- 1 laurenceg cpp 1485 Feb 28 10:05 PalindromeTester.class
+-rw------- 1 laurenceg cpp 1668 Feb 25 21:22 PalindromeTester.java
+-rw------- 1 laurenceg cpp 1606 Feb 21 17:18 Tax.class
+-rw------- 1 laurenceg cpp 2040 Feb 21 17:06 Tax.java
+-rw------- 1 laurenceg cpp 1951 Mar 13 16:23 Temperature.java
+-rw------- 1 laurenceg cpp 2157 Mar 13 16:23 TemperatureDemo.java
+-rw------- 1 laurenceg cpp 5710 Feb 11 11:20 pj1.txt
+-rw------- 1 laurenceg cpp 9828 Feb 21 17:22 pj2.txt
+-rw------- 1 laurenceg cpp 6226 Feb 28 10:08 pj3.txt
+-rw------- 1 laurenceg cpp    0 Mar 13 16:27 pj4.txt
+laurenceg@costello ~/cs1400/project $ cat Temperature.java
+//Laurence Timothy Manalo Garcia
+//CS1400, section 03
+//Project 4 - Temperature Conversion Object
+//March 15, 2021
+
+public class Temperature
+{
+   private double degrees;
+   private char scale;
+
+   public Temperature()
+   {
+      degrees = 0;
+      scale = 'c';
+   }
+
+   public Temperature(double deg)
+   {
+      degrees = deg;
+      scale = 'c';
+   }
+   public Temperature(char sc)
+   {
+      validation(sc);
+      degrees = 0;
+   }
+   public Temperature(double deg, char sc)
+   {
+      validation(sc);
+      degrees = deg;
+   }
+
+   private void validation(char letter)
+   {
+      if((letter == 'f' || letter == 'F') || (letter == 'c' || letter == 'C'))
+      {
+         scale = letter;
+      }
+      else
+      {
+         System.out.println("Invalid scale");
+         System.exit(0);
+      }
+   }
+
+   public double getDegreesC()
+   {
+      double degreesC;
+      if(scale == 'c' || scale == 'C')
+         degreesC = degrees;
+      else
+         degreesC = (degrees - 32) *5 /9;
+      return degreesC;
+   }
+
+   public double getDegreesF()
+   {
+      double degreesF;
+      if(scale == 'f' || scale == 'F')
+         degreesF = degrees;
+      else
+         degreesF = (degrees *9 /5) + 32;
+      return degreesF;
+   }
+
+   public void setDegrees(double deg)
+   {
+      degrees = deg;
+   }
+   public void setScale(char sc)
+   {
+      validation(sc);
+   }
+   public void setTemperature(double deg, char sc)
+   {
+      degrees = deg;
+      validation(sc);
+   }
+
+   public boolean equals(Temperature other)
+   {
+      if(this.getDegreesC() == other.getDegreesC())
+         return true;
+      else
+         return false;
+   }
+
+   public boolean lessThan(Temperature other)
+   {
+      if(this.getDegreesC() < other.getDegreesC())
+         return true;
+      else
+         return false;
+   }
+
+   public boolean greaterThan(Temperature other)
+   {
+      if(this.getDegreesC() > other.getDegreesC())
+         return true;
+      else
+         return false;
+   }
+}
+laurenceg@costello ~/cs1400/project $ cat TemperatureDemo.java
+//Laurence Timothy Manalo Garcia
+//CS1400, section 03
+//Project 4 - Temperature Conversion Object
+//March 15, 2021
+
+public class TemperatureDemo
+{
+   public static void main(String[] args)
+   {
+      System.out.println("\nTest 4 constructors:");
+      System.out.println("t1: created by no-arg constructor");
+      Temperature t1 = new Temperature();
+
+      System.out.println("t2: created by 1-arg constructor with initial degree -40");
+      Temperature t2 = new Temperature(-40);
+
+      System.out.println("t3: created by 1-arg constructor with initial scale 'F'");
+      Temperature t3 = new Temperature('F');
+
+      System.out.println("t4: created by 2-arg constructor with initial temperature 32 F");
+      Temperature t4 = new Temperature(32, 'F');
+
+      System.out.println("\nTest 2 getter methods:");
+      System.out.printf("is t1 (<, ==, >) t2? results are (%s, %s, %s)\n",
+                        t1.lessThan(t2), t1.equals(t2), t1.greaterThan(t2));
+      System.out.printf("is t2 (<, ==, >) t3? results are (%s, %s, %s)\n",
+                        t2.lessThan(t3), t2.equals(t3), t2.greaterThan(t3));
+      System.out.printf("is t1 (<, ==, >) t4? results are (%s, %s, %s)\n",
+                        t1.lessThan(t4), t1.equals(t4), t1.greaterThan(t4));
+
+      System.out.println("\nTest 3 setter methods:");
+      System.out.println("changing t1 from 0 C to -40 C...");
+      t1.setDegrees(-40);
+      System.out.printf("t1 is %5.1f %s = %5.1f %s\n", t1.getDegreesC(), "C",
+                                                       t1.getDegreesF(), "F");
+
+      System.out.println("changing t3 from 0 F to 100 C...");
+      t3.setTemperature(100, 'C');
+      System.out.printf("t3 is %5.1f %s = %5.1f %s\n", t3.getDegreesC(), "C",
+                                                       t3.getDegreesF(), "F");
+
+      System.out.println("changing t4 from 32 F to 32 C...");
+      t4.setScale('C');
+      System.out.printf("t4 is %5.1f %s = %5.1f %s\n", t4.getDegreesC(), "C",
+                                                       t4.getDegreesF(), "F");
+
+      System.out.println("changing t2's scale to 'G'...");
+      t2.setScale('G');
+   }
+}
+laurenceg@costello ~/cs1400/project $ javac TemperatureDemo.java
+laurenceg@costello ~/cs1400/project $ java TemperatureDemo
+
+Test 4 constructors:
+t1: created by no-arg constructor
+t2: created by 1-arg constructor with initial degree -40
+t3: created by 1-arg constructor with initial scale 'F'
+t4: created by 2-arg constructor with initial temperature 32 F
+
+Test 2 getter methods:
+is t1 (<, ==, >) t2? results are (false, false, true)
+is t2 (<, ==, >) t3? results are (true, false, false)
+is t1 (<, ==, >) t4? results are (false, true, false)
+
+Test 3 setter methods:
+changing t1 from 0 C to -40 C...
+t1 is -40.0 C = -40.0 F
+changing t3 from 0 F to 100 C...
+t3 is 100.0 C = 212.0 F
+changing t4 from 32 F to 32 C...
+t4 is  32.0 C =  89.6 F
+changing t2's scale to 'G'...
+Invalid scale
+laurenceg@costello ~/cs1400/project $ exit
+exit
+
+Script done on 2021-03-13 16:29:06-08:00 [COMMAND_EXIT_CODE="0"]

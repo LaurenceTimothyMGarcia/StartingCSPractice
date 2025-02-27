@@ -1,0 +1,439 @@
+Script started on 2021-04-17 21:32:22-07:00 [TERM="xterm" TTY="/dev/pts/32" COLUMNS="123" LINES="47"]
+laurenceg@abbott ~/cs1400/project $ pwd
+/user/laurenceg/cs1400/project
+laurenceg@abbott ~/cs1400/project $ ls -l
+total 550
+-rw------- 1 laurenceg cpp   1874 Feb 11 11:19 Calculations.class
+-rw------- 1 laurenceg cpp   2708 Feb 11 11:15 Calculations.java
+-rw------- 1 laurenceg cpp   2307 Apr  5 15:55 Fraction.class
+-rw------- 1 laurenceg cpp   3504 Apr  5 15:52 Fraction.java
+-rw------- 1 laurenceg cpp   1854 Apr  5 15:57 FractionDemo.class
+-rw------- 1 laurenceg cpp   2065 Apr  5 15:52 FractionDemo.java
+-rw------- 1 laurenceg cpp   1485 Feb 28 10:05 PalindromeTester.class
+-rw------- 1 laurenceg cpp   1668 Feb 25 21:22 PalindromeTester.java
+-rw------- 1 laurenceg cpp   1606 Feb 21 17:18 Tax.class
+-rw------- 1 laurenceg cpp   2040 Feb 21 17:06 Tax.java
+-rw------- 1 laurenceg cpp   1571 Mar 13 16:28 Temperature.class
+-rw------- 1 laurenceg cpp   1951 Mar 13 16:23 Temperature.java
+-rw------- 1 laurenceg cpp   2231 Mar 13 16:28 TemperatureDemo.class
+-rw------- 1 laurenceg cpp   2157 Mar 13 16:23 TemperatureDemo.java
+-rw------- 1 laurenceg cpp    644 Apr 17 21:29 Trivia.class
+-rw------- 1 laurenceg cpp    580 Apr 17 21:22 Trivia.java
+-rw------- 1 laurenceg cpp   2112 Apr 17 21:32 TriviaGameV1.class
+-rw------- 1 laurenceg cpp   1746 Apr 17 21:31 TriviaGameV1.java
+-rw------- 1 laurenceg cpp    603 Apr 17 21:32 TriviaGameV1Test.class
+-rw------- 1 laurenceg cpp    358 Apr 17 21:23 TriviaGameV1Test.java
+-rw------- 1 laurenceg cpp   2205 Apr 17 21:29 TriviaGameV2.class
+-rw------- 1 laurenceg cpp   1863 Apr 17 21:28 TriviaGameV2.java
+-rw------- 1 laurenceg cpp    603 Apr 17 21:29 TriviaGameV2Test.class
+-rw------- 1 laurenceg cpp    359 Apr 17 21:22 TriviaGameV2Test.java
+-rw-r--r-- 1 laurenceg cpp  46634 Apr  4 10:52 hs_err_pid104667.log
+-rw-r--r-- 1 laurenceg cpp  47428 Apr  5 15:55 hs_err_pid39461.log
+-rw-r--r-- 1 laurenceg cpp  46728 Apr 17 21:28 hs_err_pid58373.log
+-rw-r--r-- 1 laurenceg cpp  46834 Apr 17 21:32 hs_err_pid59367.log
+-rw------- 1 laurenceg cpp   5710 Feb 11 11:20 pj1.txt
+-rw------- 1 laurenceg cpp   9828 Feb 21 17:22 pj2.txt
+-rw------- 1 laurenceg cpp   6226 Feb 28 10:08 pj3.txt
+-rw------- 1 laurenceg cpp   6749 Mar 13 16:29 pj4.txt
+-rw------- 1 laurenceg cpp  13098 Apr  5 15:59 pj5.txt
+-rw------- 1 laurenceg cpp      0 Apr 17 21:32 pj6.txt
+-rw-r--r-- 1 laurenceg cpp      0 Apr  4 10:52 replay_pid104667.log
+-rw-r--r-- 1 laurenceg cpp 212396 Apr  5 15:55 replay_pid39461.log
+-rw-r--r-- 1 laurenceg cpp      0 Apr 17 21:28 replay_pid58373.log
+-rw-r--r-- 1 laurenceg cpp      0 Apr 17 21:32 replay_pid59367.log
+laurenceg@abbott ~/cs1400/project $ cat TriviaGameV1.java
+//Laurence Timothy Manalo Garcia
+//CS 1400, Section 03
+//Project 6 - Trivia Game
+//April 17th, 2021
+
+import java.util.Scanner;
+public class TriviaGameV1
+{
+   private final int ARRAY_SIZE = 5;
+   private String[] questions;
+   private String[] answers;
+   private int[] values;
+   private int score;
+   private int questionNum;
+
+   public TriviaGameV1()
+   {
+      questions = new String[] {"The first Pokemon that Ash receives from Professor Oak",
+                                "Erling Kagge skiied into here along on January 7, 1993",
+                                "1997 British band that produced 'Tub Thumper'",
+                                "Who is the tallest person on record (8 ft. 11 in) that has lived?",
+                                "PT Barnum said 'This way to the ______' to attract people to the exit."};
+      answers = new String[] {"pikachu", "south pole", "chumbawumba", "robert wadlow", "egress"};
+      values = new int[]{1, 2, 2, 3, 1};
+   }
+
+   public boolean askNextQuestion()
+   {
+      Scanner kb = new Scanner(System.in);
+      String answer;
+
+      if(questionNum >= ARRAY_SIZE)
+      {
+         return false;
+      }
+
+      System.out.println("\nQuestion " + (questionNum + 1));
+      System.out.println(questions[questionNum]);
+      answer = kb.nextLine();
+      answer = answer.toLowerCase();
+      if(answer.compareTo(answers[questionNum]) == 0)
+      {
+         System.out.println("That is correct!");
+         score += values[questionNum];
+      }
+      else
+      {
+         System.out.printf("Wrong. The correct answer is %s\n", answers[questionNum]);
+      }
+
+      questionNum++;
+      return true;
+   }
+
+   public void showScore()
+   {
+      System.out.printf("Your score is %d\n", score);
+   }
+}
+
+laurenceg@abbott ~/cs1400/project $ cat TriviaGameV1Test.java
+//Laurence Timothy Manalo Garcia
+//CS 1400, Section 03
+//Project 6 - Trivia Game
+//April 17th, 2021
+
+public class TriviaGameV1Test
+{
+   public static void main(String[] args)
+   {
+      TriviaGameV1 game = new TriviaGameV1();
+      while (game.askNextQuestion())
+         game.showScore();
+      System.out.println("Game over! Thanks for playing!");
+   }
+}
+
+laurenceg@abbott ~/cs1400/project $ javac TriviaGameV1Test.java
+laurenceg@abbott ~/cs1400/project $ java TriviaGameV1Test
+
+Question 1
+The first Pokemon that Ash receives from Professor Oak
+pikachu
+That is correct!
+Your score is 1
+
+Question 2
+Erling Kagge skiied into here along on January 7, 1993
+south pole
+That is correct!
+Your score is 3
+
+Question 3
+1997 British band that produced 'Tub Thumper'
+Chumbawumba
+That is correct!
+Your score is 5
+
+Question 4
+Who is the tallest person on record (8 ft. 11 in) that has lived?
+robert wadlow
+That is correct!
+Your score is 8
+
+Question 5
+PT Barnum said 'This way to the ______' to attract people to the exit.
+egress
+That is correct!
+Your score is 9
+Game over! Thanks for playing!
+laurenceg@abbott ~/cs1400/project $ java TriviaGameV1Test
+
+Question 1
+The first Pokemon that Ash receives from Professor Oak
+not sure
+Wrong. The correct answer is pikachu
+Your score is 0
+
+Question 2
+Erling Kagge skiied into here along on January 7, 1993
+not sure
+Wrong. The correct answer is south pole
+Your score is 0
+
+Question 3
+1997 British band that produced 'Tub Thumper'
+dont know
+Wrong. The correct answer is chumbawumba
+Your score is 0
+
+Question 4
+Who is the tallest person on record (8 ft. 11 in) that has lived?
+dont know
+Wrong. The correct answer is robert wadlow
+Your score is 0
+
+Question 5
+PT Barnum said 'This way to the ______' to attract people to the exit.
+not sure
+Wrong. The correct answer is egress
+Your score is 0
+Game over! Thanks for playing!
+laurenceg@abbott ~/cs1400/project $ java TriviaGameV1Test
+
+Question 1
+The first Pokemon that Ash receives from Professor Oak
+pikachu
+That is correct!
+Your score is 1
+
+Question 2
+Erling Kagge skiied into here along on January 7, 1993
+happiness
+Wrong. The correct answer is south pole
+Your score is 1
+
+Question 3
+1997 British band that produced 'Tub Thumper'
+chumbawumba
+That is correct!
+Your score is 3
+
+Question 4
+Who is the tallest person on record (8 ft. 11 in) that has lived?
+robert wadlow
+That is correct!
+Your score is 6
+
+Question 5
+PT Barnum said 'This way to the ______' to attract people to the exit.
+why tho
+Wrong. The correct answer is egress
+Your score is 6
+Game over! Thanks for playing!
+laurenceg@abbott ~/cs1400/project $ cat Trivia.java
+//Laurence Timothy Manalo Garcia
+//CS 1400, Section 03
+//Project 6 - Trivia Game
+//April 17th, 2021
+
+public class Trivia
+{
+   private String question;
+   private String answer;
+   private int value;
+
+   public Trivia()
+   {
+      question = "";
+      answer = "";
+      value = 0;
+   }
+
+   public Trivia(String q, String a, int v)
+   {
+      question = q;
+      answer = a;
+      value = v;
+   }
+
+   public String getQuestion()
+   {
+      return question;
+   }
+   public String getAnswer()
+   {
+      return answer;
+   }
+   public int getValue()
+   {
+      return value;
+   }
+}
+
+laurenceg@abbott ~/cs1400/project $ cat TriviaGameV2.java
+//Laurence Timothy Manalo Garcia
+//CS 1400, Section 03
+//Project 6 - Trivia Game
+//April 17th, 2021
+
+import java.util.Scanner;
+public class TriviaGameV2
+{
+   private final int ARRAY_SIZE = 5;
+   private Trivia[] trivia;
+   private int score;
+   private int questionNum;
+
+   public TriviaGameV2()
+   {
+      Trivia q1 = new Trivia("The first Pokemon that Ash receives from Professor Oak",
+                             "pikachu", 1);
+      Trivia q2 = new Trivia("Erling Kagge skiied into here along on January 7, 1993",
+                             "south pole", 2);
+      Trivia q3 = new Trivia("1997 British band that produced 'Tub Thumper'",
+                             "chumbawumba", 2);
+      Trivia q4 = new Trivia("Who is the tallest person on record (8 ft. 11 in) that has lived?",
+                             "robert wadlow", 3);
+      Trivia q5 = new Trivia("PT Barnum said 'This way to the ______' to attract people to the exit.",
+                             "egress", 1);
+
+      trivia = new Trivia[] {q1, q2, q3, q4, q5};
+   }
+
+   public boolean askNextQuestion()
+   {
+      Scanner kb = new Scanner(System.in);
+      String answer;
+
+      if(questionNum >= ARRAY_SIZE)
+      {
+         return false;
+      }
+
+      System.out.println("\nQuestion " + (questionNum + 1));
+      System.out.println(trivia[questionNum].getQuestion());
+      answer = kb.nextLine();
+      answer = answer.toLowerCase();
+      if(answer.compareTo(trivia[questionNum].getAnswer()) == 0)
+      {
+         System.out.println("That is correct!");
+         score += trivia[questionNum].getValue();
+      }
+      else
+      {
+         System.out.printf("Wrong. The correct answer is %s\n", trivia[questionNum].getAnswer());
+      }
+      questionNum++;
+      return true;
+   }
+
+   public void showScore()
+   {
+      System.out.printf("Your score is %d\n", score);
+   }
+}
+
+laurenceg@abbott ~/cs1400/project $ cat TriviaGameV2Test.java
+//Laurence Timothy Manalo Garcia
+//CS 1400, Section 03
+//Project 6 - Trivia Game
+//April 17th, 2021
+
+public class TriviaGameV2Test
+{
+   public static void main(String[] args)
+   {
+      TriviaGameV2 game = new TriviaGameV2();
+         while (game.askNextQuestion())
+      game.showScore();
+      System.out.println("Game over! Thanks for playing!");
+   }
+}
+
+laurenceg@abbott ~/cs1400/project $ javac TriviaGameV2Test.java
+laurenceg@abbott ~/cs1400/project $ java TriviaGameV2Test
+
+Question 1
+The first Pokemon that Ash receives from Professor Oak
+pikachu
+That is correct!
+Your score is 1
+
+Question 2
+Erling Kagge skiied into here along on January 7, 1993
+south pole
+That is correct!
+Your score is 3
+
+Question 3
+1997 British band that produced 'Tub Thumper'
+chumbawumba
+That is correct!
+Your score is 5
+
+Question 4
+Who is the tallest person on record (8 ft. 11 in) that has lived?
+robert wadlow
+That is correct!
+Your score is 8
+
+Question 5
+PT Barnum said 'This way to the ______' to attract people to the exit.
+egress
+That is correct!
+Your score is 9
+Game over! Thanks for playing!
+laurenceg@abbott ~/cs1400/project $ java TriviaGameV2Test
+
+Question 1
+The first Pokemon that Ash receives from Professor Oak
+not sure
+Wrong. The correct answer is pikachu
+Your score is 0
+
+Question 2
+Erling Kagge skiied into here along on January 7, 1993
+cs is awsome
+Wrong. The correct answer is south pole
+Your score is 0
+
+Question 3
+1997 British band that produced 'Tub Thumper'
+sleepy time
+Wrong. The correct answer is chumbawumba
+Your score is 0
+
+Question 4
+Who is the tallest person on record (8 ft. 11 in) that has lived?
+unsure
+Wrong. The correct answer is robert wadlow
+Your score is 0
+
+Question 5
+PT Barnum said 'This way to the ______' to attract people to the exit.
+whats up doc
+Wrong. The correct answer is egress
+Your score is 0
+Game over! Thanks for playing!
+laurenceg@abbott ~/cs1400/project $ java TriviaGameV2Test
+
+Question 1
+The first Pokemon that Ash receives from Professor Oak
+pikachu
+That is correct!
+Your score is 1
+
+Question 2
+Erling Kagge skiied into here along on January 7, 1993
+south pole
+That is correct!
+Your score is 3
+
+Question 3
+1997 British band that produced 'Tub Thumper'
+sad time
+Wrong. The correct answer is chumbawumba
+Your score is 3
+
+Question 4
+Who is the tallest person on record (8 ft. 11 in) that has lived?
+wow you got that wrong
+Wrong. The correct answer is robert wadlow
+Your score is 3
+
+Question 5
+PT Barnum said 'This way to the ______' to attract people to the exit.
+you sure you know this
+Wrong. The correct answer is egress
+Your score is 3
+Game over! Thanks for playing!
+laurenceg@abbott ~/cs1400/project $ exit
+exit
+
+Script done on 2021-04-17 21:36:25-07:00 [COMMAND_EXIT_CODE="0"]

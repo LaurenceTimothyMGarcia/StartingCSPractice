@@ -1,0 +1,274 @@
+Script started on 2021-03-11 14:53:35-08:00 [TERM="xterm" TTY="/dev/pts/6" COLUMNS="140" LINES="56"]
+laurenceg@costello ~/cs1400/codingPractice $ pwd
+/user/laurenceg/cs1400/codingPractice
+laurenceg@costello ~/cs1400/codingPractice $ ls -l
+total 204
+-rw------- 1 laurenceg cpp   750 Mar  9 22:07 Car.java
+-rw------- 1 laurenceg cpp   622 Mar  9 22:02 CarTest.java
+-rw------- 1 laurenceg cpp  1124 Feb 25 14:42 Exam.class
+-rw------- 1 laurenceg cpp   796 Feb 24 12:26 Exam.java
+-rw------- 1 laurenceg cpp   777 Feb 18 12:23 FormattedOutput.class
+-rw------- 1 laurenceg cpp   548 Feb 17 10:50 FormattedOutput.java
+-rw------- 1 laurenceg cpp  3399 Mar  4 13:33 Geometry.class
+-rw-r--r-- 1 laurenceg cpp  5445 Mar  3 13:44 Geometry.java
+-rw------- 1 laurenceg cpp   859 Feb 25 14:44 HollowSquare.class
+-rw------- 1 laurenceg cpp   929 Feb 24 13:27 HollowSquare.java
+-rw------- 1 laurenceg cpp  1216 Feb  9 17:23 KeyboardInput.class
+-rw------- 1 laurenceg cpp   875 Feb  9 15:18 KeyboardInput.java
+-rw------- 1 laurenceg cpp  1112 Feb  9 17:24 NameAndInitials.class
+-rw------- 1 laurenceg cpp   737 Feb  9 15:46 NameAndInitials.java
+-rw------- 1 laurenceg cpp   640 Feb 25 14:43 Pattern.class
+-rw------- 1 laurenceg cpp   288 Feb 24 12:44 Pattern.java
+-rw------- 1 laurenceg cpp  1003 Feb  1 21:45 Pay.class
+-rw-r--r-- 1 laurenceg cpp   980 Feb  1 21:32 Pay.java
+-rw------- 1 laurenceg cpp   902 Mar  4 13:34 PrimeChecker.class
+-rw------- 1 laurenceg cpp   772 Mar  3 14:29 PrimeChecker.java
+-rw------- 1 laurenceg cpp   716 Mar 10 12:44 SavingsAccount.java
+-rw------- 1 laurenceg cpp  1566 Mar 10 13:39 SavingsAccountTest.java
+-rw------- 1 laurenceg cpp  1419 Feb 25 14:45 SeparateEvenOddNumbers.class
+-rw------- 1 laurenceg cpp  1109 Feb 25 14:39 SeparateEvenOddNumbers.java
+-rw------- 1 laurenceg cpp  1098 Feb 18 12:23 StringComparison.class
+-rw------- 1 laurenceg cpp  1416 Feb 17 11:13 StringComparison.java
+-rw------- 1 laurenceg cpp  1269 Mar  4 13:35 StringComparisonWithWildCard.class
+-rw------- 1 laurenceg cpp  1318 Mar  4 13:30 StringComparisonWithWildCard.java
+-rw------- 1 laurenceg cpp  1202 Feb  9 17:24 VendingMachine.class
+-rw------- 1 laurenceg cpp   919 Feb  9 17:18 VendingMachine.java
+-rw------- 1 laurenceg cpp     8 Feb 25 14:45 data.even
+-rw------- 1 laurenceg cpp     5 Feb 25 14:45 data.odd
+-rw------- 1 laurenceg cpp    12 Feb 25 14:40 data.txt
+-rw-r--r-- 1 laurenceg cpp 46774 Mar 10 12:40 hs_err_pid123548.log
+-rw-r--r-- 1 laurenceg cpp 45531 Mar 10 13:32 hs_err_pid5719.log
+-rw------- 1 laurenceg cpp  2635 Feb  1 21:46 practice1.txt
+-rw------- 1 laurenceg cpp  6955 Feb  9 17:25 practice2.txt
+-rw------- 1 laurenceg cpp  7361 Feb 18 12:25 practice3.txt
+-rw------- 1 laurenceg cpp  9080 Feb 25 14:46 practice4.txt
+-rw------- 1 laurenceg cpp 16851 Mar  4 13:36 practice5.txt
+-rw------- 1 laurenceg cpp     0 Mar 11 14:53 practice6.txt
+-rw-r--r-- 1 laurenceg cpp     0 Mar 10 12:40 replay_pid123548.log
+-rw-r--r-- 1 laurenceg cpp     0 Mar 10 13:32 replay_pid5719.log
+-rw------- 1 laurenceg cpp  1284 Feb 18 12:24 roots.class
+-rw------- 1 laurenceg cpp  1095 Feb 18 12:17 roots.java
+laurenceg@costello ~/cs1400/codingPractice $ cat Car.java
+public class Car
+{
+   private int year;
+   private double speed;
+   private String make;
+
+   public Car(int yr, String model)
+   {
+      year = yr;
+      make = model;
+      speed = 0;
+   }
+
+   public void setYear(int yr)
+   {
+      year = yr;
+   }
+   public void setMake(String model)
+   {
+      make = model;
+   }
+
+   public int getYear()
+   {
+      return year;
+   }
+   public String getMake()
+   {
+      return make;
+   }
+   public double getSpeed()
+   {
+      return speed;
+   }
+
+   public double getAcceleration()
+   {
+      for(int i = 0; i < 5; i++)
+      {
+         speed += 5;
+      }
+      return speed;
+   }
+   public double getBrake()
+   {
+      for(int i = 0; i < 5; i++)
+      {
+         speed -= 5;
+      }
+      return speed;
+   }
+}
+laurenceg@costello ~/cs1400/codingPractice $ cat CarTest.java
+public class CarTest
+{
+   public static void main(String[] args)
+   {
+      System.out.println("Current status of the car: ");
+      Car vech = new Car(2016, "Honda");
+      System.out.println("Year model: " + vech.getYear());
+      System.out.println("Make: " + vech.getMake());
+      System.out.println("Speed: " + vech.getSpeed());
+      System.out.println();
+
+      System.out.println("Accelerating...");
+      System.out.println("Now the speed is " + vech.getAcceleration());
+      System.out.println();
+
+      System.out.println("Braking...");
+      System.out.println("Now the speed is " + vech.getBrake());
+   }
+}
+laurenceg@costello ~/cs1400/codingPractice $ javac CarTest.java
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 992592 bytes for Chunk::new
+# An error report file with more information is saved as:
+# /user/laurenceg/cs1400/codingPractice/hs_err_pid13225.log
+[thread 140448241100352 also had an error]
+#
+# Can't open file to dump replay data. Error: Cannot allocate memory
+laurenceg@costello ~/cs1400/codingPractice $ javac CarTest.java
+laurenceg@costello ~/cs1400/codingPractice $ java CarTest
+Current status of the car:
+Year model: 2016
+Make: Honda
+Speed: 0.0
+
+Accelerating...
+Now the speed is 25.0
+
+Braking...
+Now the speed is 0.0
+laurenceg@costello ~/cs1400/codingPractice $ cat SavingsAccount.java
+public class SavingsAccount
+{
+   private double balance;
+   private double annualInterestRate;
+
+   public SavingsAccount(double bal, double rate)
+   {
+      balance = bal;
+      annualInterestRate = rate;
+   }
+
+   public double getBalance()
+   {
+      return balance;
+   }
+   public double getInterestRate()
+   {
+      return annualInterestRate;
+   }
+
+   public void deposit(double amount)
+   {
+      balance += amount;
+   }
+   public void withdraw(double amount)
+   {
+      balance -= amount;
+   }
+
+   public double addInterest()
+   {
+      double calculatedRate;
+      calculatedRate = (annualInterestRate/12) * balance;
+      balance += calculatedRate;
+      return calculatedRate;
+      //return balance;
+   }
+}
+laurenceg@costello ~/cs1400/codingPractice $ cat SavingsAccountTest.java
+import java.util.Scanner;
+
+public class SavingsAccountTest
+{
+   public static void main(String[] args)
+   {
+      Scanner kb = new Scanner(System.in);
+      double balance, rate, deposit, withdraw;
+      double totalDeposit = 0, totalWithdraw = 0;
+      double totalRate = 0;
+      int months;
+
+      System.out.print("Enter the savings account's starting balance: ");
+      balance = kb.nextDouble();
+      System.out.print("Enter the savings account's annual interest rate: ");
+      rate = kb.nextDouble();
+      System.out.print("How many months have passed since the account was opened? ");
+      months = kb.nextInt();
+
+      SavingsAccount save = new SavingsAccount(balance, rate);
+
+      for(int i = 1; i <= months; i++)
+      {
+         System.out.printf("Enter the amount deposited during month %d: ", i);
+         deposit = kb.nextDouble();
+         save.deposit(deposit);
+         totalDeposit += deposit;
+
+         System.out.printf("Enter the amount withdrawn during month %d: ", i);
+         withdraw = kb.nextDouble();
+         totalWithdraw += withdraw;
+         if(withdraw > save.getBalance())
+         {
+            save.withdraw(save.getBalance());
+            continue;
+         }
+         save.withdraw(withdraw);
+
+         totalRate += save.addInterest();
+      }
+
+      System.out.printf("Total deposited: $%.2f\n", totalDeposit);
+      System.out.printf("Total withdrawn: $%.2f\n", totalWithdraw);
+      System.out.printf("Interest earned: $%.2f\n", totalRate);
+      System.out.printf("Ending balance: $%.2f\n", save.getBalance());
+   }
+}
+laurenceg@costello ~/cs1400/codingPractice $ javac SavingsAccountTest.java
+laurenceg@costello ~/cs1400/codingPractice $ java SavingsAccountTest
+Enter the savings account's starting balance: 100
+Enter the savings account's annual interest rate: .12
+How many months have passed since the account was opened? 1
+Enter the amount deposited during month 1: 100
+Enter the amount withdrawn during month 1: 0
+Total deposited: $100.00
+Total withdrawn: $0.00
+Interest earned: $2.00
+Ending balance: $202.00
+laurenceg@costello ~/cs1400/codingPractice $ java SavingsAccountTest
+Enter the savings account's starting balance: 100
+Enter the savings account's annual interest rate: .12
+How many months have passed since the account was opened? 3
+Enter the amount deposited during month 1: 110
+Enter the amount withdrawn during month 1: 10
+Enter the amount deposited during month 2: 120
+Enter the amount withdrawn during month 2: 20
+Enter the amount deposited during month 3: 130
+Enter the amount withdrawn during month 3: 30
+Total deposited: $360.00
+Total withdrawn: $60.00
+Interest earned: $9.07
+Ending balance: $409.07
+laurenceg@costello ~/cs1400/codingPractice $ java SavingsAccountTest
+Enter the savings account's starting balance: 100
+Enter the savings account's annual interest rate: .12
+How many months have passed since the account was opened? 3
+Enter the amount deposited during month 1: 100
+Enter the amount withdrawn during month 1: 0
+Enter the amount deposited during month 2: 0
+Enter the amount withdrawn during month 2: 300
+Enter the amount deposited during month 3: 100
+Enter the amount withdrawn during month 3: 0
+Total deposited: $200.00
+Total withdrawn: $300.00
+Interest earned: $3.00
+Ending balance: $101.00
+laurenceg@costello ~/cs1400/codingPractice $ exit
+exit
+
+Script done on 2021-03-11 14:56:08-08:00 [COMMAND_EXIT_CODE="0"]

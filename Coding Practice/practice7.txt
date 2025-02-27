@@ -1,0 +1,255 @@
+Script started on 2021-03-18 11:12:13-07:00 [TERM="xterm" TTY="/dev/pts/119" COLUMNS="99" LINES="46"]
+laurenceg@costello ~/cs1400/codingPractice $ pwd
+/user/laurenceg/cs1400/codingPractice
+laurenceg@costello ~/cs1400/codingPractice $ ls -l
+total 285
+-rw------- 1 laurenceg cpp   927 Mar 11 14:54 Car.class
+-rw------- 1 laurenceg cpp   750 Mar  9 22:07 Car.java
+-rw------- 1 laurenceg cpp  1173 Mar 11 14:54 CarTest.class
+-rw------- 1 laurenceg cpp   622 Mar  9 22:02 CarTest.java
+-rw------- 1 laurenceg cpp   989 Mar 16 21:26 CarpetCalculator.class
+-rw------- 1 laurenceg cpp   740 Mar 16 21:25 CarpetCalculator.java
+-rw------- 1 laurenceg cpp  1124 Feb 25 14:42 Exam.class
+-rw------- 1 laurenceg cpp   796 Feb 24 12:26 Exam.java
+-rw------- 1 laurenceg cpp   777 Feb 18 12:23 FormattedOutput.class
+-rw------- 1 laurenceg cpp   548 Feb 17 10:50 FormattedOutput.java
+-rw------- 1 laurenceg cpp  3399 Mar  4 13:33 Geometry.class
+-rw-r--r-- 1 laurenceg cpp  5445 Mar  3 13:44 Geometry.java
+-rw------- 1 laurenceg cpp   859 Feb 25 14:44 HollowSquare.class
+-rw------- 1 laurenceg cpp   929 Feb 24 13:27 HollowSquare.java
+-rw------- 1 laurenceg cpp   835 Mar 18 11:05 HotDogStand.class
+-rw------- 1 laurenceg cpp   535 Mar 18 11:05 HotDogStand.java
+-rw------- 1 laurenceg cpp  1391 Mar 18 11:05 HotDogStandTest.class
+-rw------- 1 laurenceg cpp  1342 Mar 18 11:04 HotDogStandTest.java
+-rw------- 1 laurenceg cpp  1216 Feb  9 17:23 KeyboardInput.class
+-rw------- 1 laurenceg cpp   875 Feb  9 15:18 KeyboardInput.java
+-rw------- 1 laurenceg cpp  1112 Feb  9 17:24 NameAndInitials.class
+-rw------- 1 laurenceg cpp   737 Feb  9 15:46 NameAndInitials.java
+-rw------- 1 laurenceg cpp   640 Feb 25 14:43 Pattern.class
+-rw------- 1 laurenceg cpp   288 Feb 24 12:44 Pattern.java
+-rw------- 1 laurenceg cpp  1003 Feb  1 21:45 Pay.class
+-rw-r--r-- 1 laurenceg cpp   980 Feb  1 21:32 Pay.java
+-rw------- 1 laurenceg cpp   902 Mar  4 13:34 PrimeChecker.class
+-rw------- 1 laurenceg cpp   772 Mar  3 14:29 PrimeChecker.java
+-rw------- 1 laurenceg cpp   762 Mar 16 21:26 RoomCarpet.class
+-rw------- 1 laurenceg cpp   463 Mar 16 21:26 RoomCarpet.java
+-rw------- 1 laurenceg cpp   738 Mar 16 20:58 RoomDimension.class
+-rw------- 1 laurenceg cpp   490 Mar 16 20:58 RoomDimension.java
+-rw------- 1 laurenceg cpp   655 Mar 11 14:55 SavingsAccount.class
+-rw------- 1 laurenceg cpp   716 Mar 10 12:44 SavingsAccount.java
+-rw------- 1 laurenceg cpp  1828 Mar 11 14:55 SavingsAccountTest.class
+-rw------- 1 laurenceg cpp  1566 Mar 10 13:39 SavingsAccountTest.java
+-rw------- 1 laurenceg cpp  1419 Feb 25 14:45 SeparateEvenOddNumbers.class
+-rw------- 1 laurenceg cpp  1109 Feb 25 14:39 SeparateEvenOddNumbers.java
+-rw------- 1 laurenceg cpp  1098 Feb 18 12:23 StringComparison.class
+-rw------- 1 laurenceg cpp  1416 Feb 17 11:13 StringComparison.java
+-rw------- 1 laurenceg cpp  1269 Mar  4 13:35 StringComparisonWithWildCard.class
+-rw------- 1 laurenceg cpp  1318 Mar  4 13:30 StringComparisonWithWildCard.java
+-rw------- 1 laurenceg cpp  1202 Feb  9 17:24 VendingMachine.class
+-rw------- 1 laurenceg cpp   919 Feb  9 17:18 VendingMachine.java
+-rw------- 1 laurenceg cpp     8 Feb 25 14:45 data.even
+-rw------- 1 laurenceg cpp     5 Feb 25 14:45 data.odd
+-rw------- 1 laurenceg cpp    12 Feb 25 14:40 data.txt
+-rw-r--r-- 1 laurenceg cpp 46774 Mar 10 12:40 hs_err_pid123548.log
+-rw-r--r-- 1 laurenceg cpp 46663 Mar 11 14:54 hs_err_pid13225.log
+-rw-r--r-- 1 laurenceg cpp 45531 Mar 10 13:32 hs_err_pid5719.log
+-rw------- 1 laurenceg cpp  2635 Feb  1 21:46 practice1.txt
+-rw------- 1 laurenceg cpp  6955 Feb  9 17:25 practice2.txt
+-rw------- 1 laurenceg cpp  7361 Feb 18 12:25 practice3.txt
+-rw------- 1 laurenceg cpp  9080 Feb 25 14:46 practice4.txt
+-rw------- 1 laurenceg cpp 16851 Mar  4 13:36 practice5.txt
+-rw------- 1 laurenceg cpp 10972 Mar 11 14:56 practice6.txt
+-rw------- 1 laurenceg cpp     0 Mar 18 11:12 practice7.txt
+-rw-r--r-- 1 laurenceg cpp     0 Mar 10 12:40 replay_pid123548.log
+-rw-r--r-- 1 laurenceg cpp     0 Mar 11 14:54 replay_pid13225.log
+-rw-r--r-- 1 laurenceg cpp     0 Mar 10 13:32 replay_pid5719.log
+-rw------- 1 laurenceg cpp  1284 Feb 18 12:24 roots.class
+-rw------- 1 laurenceg cpp  1095 Feb 18 12:17 roots.java
+laurenceg@costello ~/cs1400/codingPractice $ cat HotDogStand.java
+public class HotDogStand
+{
+   private int standId;
+   private int dogsSold;
+   private static int totalSold = 0;
+
+   public HotDogStand(int id, int sold)
+   {
+      standId = id;
+      dogsSold = sold;
+      totalSold += dogsSold;
+   }
+
+   public void justSold()
+   {
+      dogsSold++;
+      totalSold++;
+   }
+
+   public String toString()
+   {
+      String str = "Stand " + standId + " sold " +
+                   dogsSold + " hot dogs.";
+      return str;
+   }
+
+   public static int getTotalSold()
+   {
+      return totalSold;
+   }
+}
+laurenceg@costello ~/cs1400/codingPractice $ cat HotDogStandTest.java
+public class HotDogStandTest
+{
+   public static void main(String[] args)
+   {
+      HotDogStand stand1 = new HotDogStand(1, 0);
+      HotDogStand stand2 = new HotDogStand(2, 0);
+      HotDogStand stand3 = new HotDogStand(3, 33);
+
+      System.out.println("Test our code with 3 hot dog stands created, ");
+      System.out.println("each sells a variety of hot dogs: ");
+      statusStand(stand1, stand2, stand3);
+      System.out.printf("Total sold = %d\n\n", HotDogStand.getTotalSold());
+
+      System.out.println("Sold at stand 1, 2, 1, 1, 2:");
+      addHotDogs(stand1, 3);
+      addHotDogs(stand2, 2);
+      statusStand(stand1, stand2, stand3);
+      System.out.printf("Total sold = %d\n\n", HotDogStand.getTotalSold());
+
+      System.out.println("More sold at stand 3, 3, 2, 1, 1:");
+      addHotDogs(stand3, 2);
+      addHotDogs(stand2, 1);
+      addHotDogs(stand1, 2);
+      statusStand(stand1, stand2, stand3);
+      System.out.printf("Total sold = %d\n\n", HotDogStand.getTotalSold());
+
+   }
+
+   public static void statusStand(HotDogStand hd1, HotDogStand hd2, HotDogStand hd3)
+   {
+      System.out.println(hd1);
+      System.out.println(hd2);
+      System.out.println(hd3);
+   }
+   public static void addHotDogs(HotDogStand stand, int sell)
+   {
+      for(int i = 0; i < sell; i++)
+      {
+         stand.justSold();
+      }
+   }
+}
+laurenceg@costello ~/cs1400/codingPractice $ javac HotDogStandTest.java
+laurenceg@costello ~/cs1400/codingPractice $ java HotDogStandTest
+Test our code with 3 hot dog stands created,
+each sells a variety of hot dogs:
+Stand 1 sold 0 hot dogs.
+Stand 2 sold 0 hot dogs.
+Stand 3 sold 33 hot dogs.
+Total sold = 33
+
+Sold at stand 1, 2, 1, 1, 2:
+Stand 1 sold 3 hot dogs.
+Stand 2 sold 2 hot dogs.
+Stand 3 sold 33 hot dogs.
+Total sold = 38
+
+More sold at stand 3, 3, 2, 1, 1:
+Stand 1 sold 5 hot dogs.
+Stand 2 sold 3 hot dogs.
+Stand 3 sold 35 hot dogs.
+Total sold = 43
+
+laurenceg@costello ~/cs1400/codingPractice $ cat RoomDimension.java
+public class RoomDimension
+{
+   private double length;
+   private double width;
+
+   public RoomDimension(double len, double w)
+   {
+      length = len;
+      width = w;
+   }
+   public RoomDimension(RoomDimension obj2)
+   {
+      length = obj2.length;
+      width = obj2.width;
+   }
+
+   public double getArea()
+   {
+      return length * width;
+   }
+   public String toString()
+   {
+      String str = "Length = " + length +
+                   "\nWidth = " + width;
+      return str;
+   }
+}
+laurenceg@costello ~/cs1400/codingPractice $ cat RoomCarpet.java
+public class RoomCarpet
+{
+   private RoomDimension size;
+   private double carpetCost;
+
+   public RoomCarpet(RoomDimension dim, double cost)
+   {
+      size = dim;
+      carpetCost = cost;
+   }
+   public double getTotalCost()
+   {
+      return size.getArea() * carpetCost;
+   }
+   public String toString()
+   {
+      String str = "Carpet cost per square foot: $" + carpetCost +
+                   "\nTotal cost: $" + this.getTotalCost();
+      return str;
+   }
+}
+laurenceg@costello ~/cs1400/codingPractice $ cat CarpetCalculator.java
+import java.util.Scanner;
+public class CarpetCalculator
+{
+   public static void main(String[] args)
+   {
+      Scanner kb = new Scanner(System.in);
+
+      double length, width;
+      double price;
+
+      System.out.print("Enter the length of the room: ");
+      length = kb.nextInt();
+      System.out.print("Now enter the width: ");
+      width = kb.nextInt();
+      System.out.print("Enter carpet price per square foot: ");
+      price = kb.nextInt();
+      System.out.println();
+
+      RoomDimension room = new RoomDimension(length, width);
+      RoomCarpet carpet = new RoomCarpet(room, price);
+
+      System.out.println("Room dimension:");
+      System.out.println(room.toString());
+      System.out.println(carpet.toString());
+   }
+}
+laurenceg@costello ~/cs1400/codingPractice $ javac CarpetCalculator.java
+laurenceg@costello ~/cs1400/codingPractice $ java CarpetCalculator
+Enter the length of the room: 10
+Now enter the width: 12
+Enter carpet price per square foot: 8
+
+Room dimension:
+Length = 10.0
+Width = 12.0
+Carpet cost per square foot: $8.0
+Total cost: $960.0
+laurenceg@costello ~/cs1400/codingPractice $ exit
+exit
+
+Script done on 2021-03-18 11:14:12-07:00 [COMMAND_EXIT_CODE="0"]

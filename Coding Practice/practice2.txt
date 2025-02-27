@@ -1,0 +1,154 @@
+Script started on 2021-02-09 17:22:50-08:00 [TERM="xterm" TTY="/dev/pts/1" COLUMNS="115" LINES="41"]
+laurenceg@abbott ~/cs1400/codingPractice $ pwd
+/user/laurenceg/cs1400/codingPractice
+laurenceg@abbott ~/cs1400/codingPractice $ ls -l
+total 12
+-rw------- 1 laurenceg cpp  875 Feb  9 15:18 KeyboardInput.java
+-rw------- 1 laurenceg cpp  737 Feb  9 15:46 NameAndInitials.java
+-rw------- 1 laurenceg cpp 1003 Feb  1 21:45 Pay.class
+-rw-r--r-- 1 laurenceg cpp  980 Feb  1 21:32 Pay.java
+-rw------- 1 laurenceg cpp  919 Feb  9 17:18 VendingMachine.java
+-rw------- 1 laurenceg cpp 2635 Feb  1 21:46 practice1.txt
+-rw------- 1 laurenceg cpp    0 Feb  9 17:21 practice2.txt
+laurenceg@abbott ~/cs1400/codingPractice $ cat KeyboardInput.java
+import java.util.Scanner;
+public class KeyboardInput
+{
+   public static void main(String[] args)
+   {
+      String name;
+      String companyName;
+      int age;
+      double annualSalary;
+
+      Scanner kb = new Scanner(System.in);
+
+      System.out.print("What is your name?");
+      name = kb.nextLine();
+
+      System.out.print("How old are you?");
+      age = kb.nextInt();
+      kb.nextLine();
+
+      System.out.print("What company do you hope to work for?");
+      companyName = kb.nextLine();
+
+      System.out.print("How much do you hope your annual salary is?");
+      annualSalary = kb.nextDouble();
+
+      System.out.print("My name is " + name
+                        + ", my age is " + age
+                        + " and \nI hope to work for "
+                        + companyName + " and earn $"
+                        + annualSalary + " per year.");
+   }
+}
+laurenceg@abbott ~/cs1400/codingPractice $ javac KeyboardInput.java
+laurenceg@abbott ~/cs1400/codingPractice $ java KeyboardInput
+What is your name?Laurence
+How old are you?18
+What company do you hope to work for?Riot Games
+How much do you hope your annual salary is?100000
+My name is Laurence, my age is 18 and
+I hope to work for Riot Games and earn $100000.0 per year.laurenceg@abbott ~/cs1400/codingPractice $
+laurenceg@abbott ~/cs1400/codingPractice $ cat NameAndInitials.java
+import java.util.Scanner;
+public class NameAndInitials
+{
+   public static void main(String[] args)
+   {
+      String first = "Laurence Timothy";
+      String middle = "Manalo";
+      String last = "Garcia";
+
+      System.out.println("Name = " + first + " " + middle + " " + last);
+      System.out.println("Initials = " + first.charAt(0)+ first.charAt(9) + middle.charAt(0) + last.charAt(0));
+      System.out.println("Short name = " + first + " " + middle.charAt(0) + " " + last);
+      System.out.println("Shorter name = " + first.charAt(0) + " " + first.charAt(9) + " " + middle.charAt(0) + " " + last);
+      System.out.println("UpperCase name = " + first.toUpperCase()+ " " + middle.toUpperCase() + " " +last.toUpperCase());
+   }
+}
+laurenceg@abbott ~/cs1400/codingPractice $ javac NameAndInitials.java
+laurenceg@abbott ~/cs1400/codingPractice $ java NameAndInitials
+Name = Laurence Timothy Manalo Garcia
+Initials = LTMG
+Short name = Laurence Timothy M Garcia
+Shorter name = L T M Garcia
+UpperCase name = LAURENCE TIMOTHY MANALO GARCIA
+laurenceg@abbott ~/cs1400/codingPractice $ cat VendingMachine.java
+import java.util.Scanner;
+public class VendingMachine
+{
+   public static void main(String[] args)
+   {
+      int price;
+      int totalChange;
+      int quarters, dimes, nickels;
+      Scanner kb = new Scanner(System.in);
+
+      System.out.println("Please enter price of item");
+      System.out.print("Price ranges from 25 cents to a dollar, in 5-cent increments: ");
+      price = kb.nextInt();
+
+      totalChange = 100 - price;
+
+      System.out.println("Your total change is " + totalChange);
+
+      quarters = totalChange/25;
+      totalChange -= quarters * 25;
+      dimes = totalChange/10;
+      totalChange -= dimes * 10;
+      nickels = totalChange/5;
+      totalChange -= nickels * 5;
+
+      System.out.println("Your change will be broken down into:");
+      System.out.println(quarters + " quarters,");
+      System.out.println(dimes + " dimes, and");
+      System.out.println(nickels + " nickels.");
+   }
+}
+laurenceg@abbott ~/cs1400/codingPractice $ javac VendingMachine.java
+laurenceg@abbott ~/cs1400/codingPractice $ java VendingMachine
+Please enter price of item
+Price ranges from 25 cents to a dollar, in 5-cent increments: 25
+Your total change is 75
+Your change will be broken down into:
+3 quarters,
+0 dimes, and
+0 nickels.
+laurenceg@abbott ~/cs1400/codingPractice $ java VendingMachine
+Please enter price of item
+Price ranges from 25 cents to a dollar, in 5-cent increments: 35
+Your total change is 65
+Your change will be broken down into:
+2 quarters,
+1 dimes, and
+1 nickels.
+laurenceg@abbott ~/cs1400/codingPractice $ java VendingMachine
+Please enter price of item
+Price ranges from 25 cents to a dollar, in 5-cent increments: 45
+Your total change is 55
+Your change will be broken down into:
+2 quarters,
+0 dimes, and
+1 nickels.
+laurenceg@abbott ~/cs1400/codingPractice $ java VendingMachine
+Please enter price of item
+Price ranges from 25 cents to a dollar, in 5-cent increments: 80
+Your total change is 20
+Your change will be broken down into:
+0 quarters,
+2 dimes, and
+0 nickels.
+laurenceg@abbott ~/cs1400/codingPractice $ java VendingMachine
+Please enter price of item
+Price ranges from 25 cents to a dollar, in 5-cent increments: 100
+Your total change is 0
+Your change will be broken down into:
+0 quarters,
+0 dimes, and
+0 nickels.
+laurenceg@abbott ~/cs1400/codingPractice $ exit
+exit
+
+Script done on 2021-02-09 17:25:49-08:00 [COMMAND_EXIT_CODE="0"]
